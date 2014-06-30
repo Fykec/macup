@@ -8,14 +8,14 @@
 
 import Foundation
 
-func initPreferencesWindowController() -> NSWindowController
-{
-    let vcs:NSArray = [MPMarkdownPreferencesViewController.init(),
-        MPEditorPreferencesViewController.init(),
-        MPHtmlPreferencesViewController.init()]
-    let title:NSString =  NSLocalizedString("Preferences", comment: "Preferences window title.")
-    return MASPreferencesWindowController(viewControllers: vcs, title:title)
-}
+//func initPreferencesWindowController() -> NSWindowController
+//{
+//    let vcs:NSArray = [MPMarkdownPreferencesViewController.init(),
+//        MPEditorPreferencesViewController.init(),
+//        MPHtmlPreferencesViewController.init()]
+//    let title:NSString =  NSLocalizedString("Preferences", comment: "Preferences window title.")
+//    return MASPreferencesWindowController(viewControllers: vcs, title:title)
+//}
 
 class MUSMainController : NSObject
 {
@@ -26,11 +26,12 @@ class MUSMainController : NSObject
     }
     }
 
+//check
+//    var preferencesWindowController:NSViewController
 
-    @lazy var preferencesWindowController:NSWindowController = initPreferencesWindowController()
 
     @IBAction func showPreferencesWindow(sender:AnyObject!) {
-        preferencesWindowController.showWindow(nil)
+//        preferencesWindowController.showWindow(nil)
     }
 
     @IBAction func showHelp(sender:AnyObject) {
@@ -61,6 +62,13 @@ class MUSMainController : NSObject
     init()
     {
         super.init()
+
+//        let vcs:NSArray = [MPMarkdownPreferencesViewController.init(),
+//            MPEditorPreferencesViewController.init(),
+//            MPHtmlPreferencesViewController.init()]
+//        let title:NSString =  NSLocalizedString("Preferences", comment: "Preferences window title.")
+//        preferencesWindowController = MASPreferencesWindowController(viewControllers: vcs, title:title)
+
         let center:NSNotificationCenter = NSNotificationCenter.defaultCenter()
         center.addObserver(self, selector: "showFirstLaunchTips", name: MPDidDetectFreshInstallationNotification, object: nil)
         self.copyFiles()

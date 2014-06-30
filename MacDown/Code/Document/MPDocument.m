@@ -15,7 +15,7 @@
 #import "NSTextView+Autocomplete.h"
 #import "MPPreferences.h"
 #import "MPRenderer.h"
-#import "MPExportPanelAccessoryViewController.h"
+#import <MacDown-Swift.h>
 
 
 @implementation MPPreferences (Hoedown)
@@ -427,8 +427,8 @@
         panel.nameFieldStringValue = fileName;
     }
 
-    MPExportPanelAccessoryViewController *controller =
-        [[MPExportPanelAccessoryViewController alloc] init];
+    MUSExportPanelAccessoryViewController *controller =
+        [[MUSExportPanelAccessoryViewController alloc] init];
     panel.accessoryView = controller.view;
 
     NSWindow *w = nil;
@@ -438,8 +438,8 @@
     [panel beginSheetModalForWindow:w completionHandler:^(NSInteger result) {
         if (result != NSFileHandlingPanelOKButton)
             return;
-        BOOL styles = controller.stylesIncluded;
-        BOOL highlighting = controller.highlightingIncluded;
+        BOOL styles = controller.isStylesIncluded;
+        BOOL highlighting = controller.isHighlightingIncluded;
         NSString *html = [self.renderer HTMLForExportWithStyles:styles
                                                    highlighting:highlighting];
         [html writeToURL:panel.URL atomically:NO encoding:NSUTF8StringEncoding
