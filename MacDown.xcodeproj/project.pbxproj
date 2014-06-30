@@ -35,7 +35,6 @@
 		1F8A83621953461800B6BF69 /* pmh_parser.c in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A83611953461800B6BF69 /* pmh_parser.c */; settings = {COMPILER_FLAGS = "-Wno-conversion -Xanalyzer -analyzer-disable-checker"; }; };
 		1F8A8364195346B200B6BF69 /* pmh_styleparser.c in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A8363195346B200B6BF69 /* pmh_styleparser.c */; settings = {COMPILER_FLAGS = "-Wno-conversion"; }; };
 		1F9A14EC194EEE9900D1C6A9 /* MPExportPanelAccessoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9A14E9194EEE9900D1C6A9 /* MPExportPanelAccessoryViewController.m */; };
-		1F9A14ED194EEE9900D1C6A9 /* MPMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9A14EB194EEE9900D1C6A9 /* MPMainController.m */; };
 		1F9A14EF194EEEDD00D1C6A9 /* Styles in Resources */ = {isa = PBXBuildFile; fileRef = 1F9A14EE194EEEDD00D1C6A9 /* Styles */; };
 		1F9A14F4194EF6A600D1C6A9 /* Themes in Resources */ = {isa = PBXBuildFile; fileRef = 1F9A14F3194EF6A600D1C6A9 /* Themes */; };
 		1F9A14F6194EFF1F00D1C6A9 /* PreferencesMarkdown.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F9A14F5194EFF1F00D1C6A9 /* PreferencesMarkdown.png */; };
@@ -49,6 +48,7 @@
 		1FD7F8DE194A0211007ED2A1 /* Data in Resources */ = {isa = PBXBuildFile; fileRef = 1FD7F8DD194A0211007ED2A1 /* Data */; };
 		1FF207631941CF22005B5654 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FF207621941CF22005B5654 /* WebKit.framework */; };
 		1FFF301D1948A5320009AF24 /* MPStringLookupTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FFF301C1948A5320009AF24 /* MPStringLookupTests.m */; };
+		2C9C5D5E196152350098CBAC /* MUSMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9C5D5D196152350098CBAC /* MUSMainController.swift */; };
 		5318159056384894AA42DB4F /* libPods-MacDownTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AEAF42BBDCEC4012B5092BB3 /* libPods-MacDownTests.a */; };
 		B49728377A904875B2963C38 /* libPods-MacDown.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C5C1FBBB3ED456285901D31 /* libPods-MacDown.a */; };
 /* End PBXBuildFile section */
@@ -118,8 +118,6 @@
 		1F8A837E195348C500B6BF69 /* peg-markdown-highlight.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "peg-markdown-highlight.xcodeproj"; path = "Dependency/peg-markdown-highlight/peg-markdown-highlight.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		1F9A14E8194EEE9900D1C6A9 /* MPExportPanelAccessoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPExportPanelAccessoryViewController.h; path = Code/Application/MPExportPanelAccessoryViewController.h; sourceTree = "<group>"; };
 		1F9A14E9194EEE9900D1C6A9 /* MPExportPanelAccessoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPExportPanelAccessoryViewController.m; path = Code/Application/MPExportPanelAccessoryViewController.m; sourceTree = "<group>"; };
-		1F9A14EA194EEE9900D1C6A9 /* MPMainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPMainController.h; path = Code/Application/MPMainController.h; sourceTree = "<group>"; };
-		1F9A14EB194EEE9900D1C6A9 /* MPMainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPMainController.m; path = Code/Application/MPMainController.m; sourceTree = "<group>"; };
 		1F9A14EE194EEEDD00D1C6A9 /* Styles */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Styles; path = Resources/Styles; sourceTree = "<group>"; };
 		1F9A14F3194EF6A600D1C6A9 /* Themes */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Themes; path = Resources/Themes; sourceTree = "<group>"; };
 		1F9A14F5194EFF1F00D1C6A9 /* PreferencesMarkdown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PreferencesMarkdown.png; path = Resources/PreferencesMarkdown.png; sourceTree = "<group>"; };
@@ -140,6 +138,8 @@
 		1FD7F8DD194A0211007ED2A1 /* Data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Data; sourceTree = "<group>"; };
 		1FF207621941CF22005B5654 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		1FFF301C1948A5320009AF24 /* MPStringLookupTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPStringLookupTests.m; sourceTree = "<group>"; };
+		2C9C5D5C196152340098CBAC /* MacDown-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MacDown-Bridging-Header.h"; sourceTree = "<group>"; };
+		2C9C5D5D196152350098CBAC /* MUSMainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUSMainController.swift; sourceTree = "<group>"; };
 		7C5C1FBBB3ED456285901D31 /* libPods-MacDown.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MacDown.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F8797E748AA4BCA96DFA790 /* Pods-MacDown.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MacDown.xcconfig"; path = "Pods/Pods-MacDown.xcconfig"; sourceTree = "<group>"; };
 		AB3B8954FAB54E3C803DDAEE /* Pods-MacDownTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MacDownTests.xcconfig"; path = "Pods/Pods-MacDownTests.xcconfig"; sourceTree = "<group>"; };
@@ -248,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				1F0D9DAE194AC905008E1856 /* main.m */,
+				2C9C5D5C196152340098CBAC /* MacDown-Bridging-Header.h */,
 				1F0D9DB5194ACA33008E1856 /* MacDown-Prefix.pch */,
 			);
 			name = "Additional Sources";
@@ -290,8 +291,7 @@
 			isa = PBXGroup;
 			children = (
 				1F0D9D81194AC83C008E1856 /* MainMenu.xib */,
-				1F9A14EA194EEE9900D1C6A9 /* MPMainController.h */,
-				1F9A14EB194EEE9900D1C6A9 /* MPMainController.m */,
+				2C9C5D5D196152350098CBAC /* MUSMainController.swift */,
 				1F9A14E8194EEE9900D1C6A9 /* MPExportPanelAccessoryViewController.h */,
 				1F9A14E9194EEE9900D1C6A9 /* MPExportPanelAccessoryViewController.m */,
 				1FBBD4BC194C952300BB3C88 /* MPExportPanelAccessoryViewController.xib */,
@@ -600,8 +600,8 @@
 				1F0D9DAF194AC905008E1856 /* main.m in Sources */,
 				1F0D9D66194AC7CF008E1856 /* NSTextView+Autocomplete.m in Sources */,
 				1F9A14EC194EEE9900D1C6A9 /* MPExportPanelAccessoryViewController.m in Sources */,
-				1F9A14ED194EEE9900D1C6A9 /* MPMainController.m in Sources */,
 				1F002A23195B3DAE008B8D93 /* MPRenderer.m in Sources */,
+				2C9C5D5E196152350098CBAC /* MUSMainController.swift in Sources */,
 				1FBBD4CB194CA36500BB3C88 /* hoedown_html_patch.c in Sources */,
 				1F8A8364195346B200B6BF69 /* pmh_styleparser.c in Sources */,
 				1F0D9D93194AC852008E1856 /* MPDocument.m in Sources */,
@@ -791,11 +791,15 @@
 			baseConfigurationReference = 7F8797E748AA4BCA96DFA790 /* Pods-MacDown.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MacDown/Code/MacDown-Prefix.pch";
 				INFOPLIST_FILE = "MacDown/MacDown-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = MacDown;
+				SWIFT_OBJC_BRIDGING_HEADER = "MacDown/MacDown-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -805,11 +809,14 @@
 			baseConfigurationReference = 7F8797E748AA4BCA96DFA790 /* Pods-MacDown.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MacDown/Code/MacDown-Prefix.pch";
 				INFOPLIST_FILE = "MacDown/MacDown-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = MacDown;
+				SWIFT_OBJC_BRIDGING_HEADER = "MacDown/MacDown-Bridging-Header.h";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
