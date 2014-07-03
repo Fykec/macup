@@ -15,3 +15,4 @@
 #import "NSString+Lookup.h"
 #import "NSTextView+Autocomplete.h"
 #import "MPRenderer.h"
+#import "MUSWebView.h"

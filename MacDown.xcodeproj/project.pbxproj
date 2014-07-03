@@ -16,12 +16,11 @@
 		1F0D9D7A194AC7F7008E1856 /* MPMarkdownPreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0D9D70194AC7F7008E1856 /* MPMarkdownPreferencesViewController.m */; };
 		1F0D9D7C194AC7F7008E1856 /* MPPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0D9D73194AC7F7008E1856 /* MPPreferences.m */; };
 		1F0D9D7D194AC7F7008E1856 /* MPPreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0D9D75194AC7F7008E1856 /* MPPreferencesViewController.m */; };
-		1F0D9D93194AC852008E1856 /* MPDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0D9D92194AC852008E1856 /* MPDocument.m */; };
 		1F0D9DAA194AC8CB008E1856 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 1F0D9DA6194AC8CB008E1856 /* Credits.rtf */; };
 		1F0D9DAB194AC8CB008E1856 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1F0D9DA8194AC8CB008E1856 /* InfoPlist.strings */; };
 		1F0D9DAD194AC8EF008E1856 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F0D9DAC194AC8EF008E1856 /* Images.xcassets */; };
 		1F0D9DAF194AC905008E1856 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0D9DAE194AC905008E1856 /* main.m */; };
-		1F0D9DB0194AC9EE008E1856 /* MPDocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F0D9D83194AC83C008E1856 /* MPDocument.xib */; };
+		1F0D9DB0194AC9EE008E1856 /* MUSDocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F0D9D83194AC83C008E1856 /* MUSDocument.xib */; };
 		1F0D9DB1194AC9EE008E1856 /* MPEditorPreferencesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F0D9D85194AC83C008E1856 /* MPEditorPreferencesViewController.xib */; };
 		1F0D9DB2194AC9EE008E1856 /* MPHtmlPreferencesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F0D9D87194AC83C008E1856 /* MPHtmlPreferencesViewController.xib */; };
 		1F0D9DB3194AC9EE008E1856 /* MPMarkdownPreferencesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F0D9D89194AC83C008E1856 /* MPMarkdownPreferencesViewController.xib */; };
@@ -47,6 +46,8 @@
 		1FD7F8DE194A0211007ED2A1 /* Data in Resources */ = {isa = PBXBuildFile; fileRef = 1FD7F8DD194A0211007ED2A1 /* Data */; };
 		1FF207631941CF22005B5654 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FF207621941CF22005B5654 /* WebKit.framework */; };
 		1FFF301D1948A5320009AF24 /* MPStringLookupTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FFF301C1948A5320009AF24 /* MPStringLookupTests.m */; };
+		2C0CD0D219653D7000111223 /* MBSwizzler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0CD0D119653D7000111223 /* MBSwizzler.swift */; };
+		2C0CD0D81965447E00111223 /* MUSWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0CD0D71965447E00111223 /* MUSWebView.m */; };
 		2C93B80F19625AD200F06F44 /* String+Lookup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C93B80E19625AD200F06F44 /* String+Lookup.swift */; };
 		2C9C5D5E196152350098CBAC /* MUSMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9C5D5D196152350098CBAC /* MUSMainController.swift */; };
 		2C9C5D60196155220098CBAC /* MUSExportPanelAccessoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9C5D5F196155220098CBAC /* MUSExportPanelAccessoryViewController.swift */; };
@@ -92,12 +93,10 @@
 		1F0D9D74194AC7F7008E1856 /* MPPreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPPreferencesViewController.h; sourceTree = "<group>"; };
 		1F0D9D75194AC7F7008E1856 /* MPPreferencesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPPreferencesViewController.m; sourceTree = "<group>"; };
 		1F0D9D82194AC83C008E1856 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Localization/Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		1F0D9D84194AC83C008E1856 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Localization/Base.lproj/MPDocument.xib; sourceTree = "<group>"; };
+		1F0D9D84194AC83C008E1856 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Localization/Base.lproj/MUSDocument.xib; sourceTree = "<group>"; };
 		1F0D9D86194AC83C008E1856 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Localization/Base.lproj/MPEditorPreferencesViewController.xib; sourceTree = "<group>"; };
 		1F0D9D88194AC83C008E1856 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Localization/Base.lproj/MPHtmlPreferencesViewController.xib; sourceTree = "<group>"; };
 		1F0D9D8A194AC83C008E1856 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Localization/Base.lproj/MPMarkdownPreferencesViewController.xib; sourceTree = "<group>"; };
-		1F0D9D91194AC852008E1856 /* MPDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPDocument.h; sourceTree = "<group>"; };
-		1F0D9D92194AC852008E1856 /* MPDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPDocument.m; sourceTree = "<group>"; };
 		1F0D9DA3194AC8B3008E1856 /* MacDown-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "MacDown-Info.plist"; sourceTree = "<group>"; };
 		1F0D9DA7194AC8CB008E1856 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = Localization/en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		1F0D9DA9194AC8CB008E1856 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localization/en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -138,6 +137,9 @@
 		1FD7F8DD194A0211007ED2A1 /* Data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Data; sourceTree = "<group>"; };
 		1FF207621941CF22005B5654 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		1FFF301C1948A5320009AF24 /* MPStringLookupTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPStringLookupTests.m; sourceTree = "<group>"; };
+		2C0CD0D119653D7000111223 /* MBSwizzler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBSwizzler.swift; sourceTree = "<group>"; };
+		2C0CD0D61965447E00111223 /* MUSWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUSWebView.h; sourceTree = "<group>"; };
+		2C0CD0D71965447E00111223 /* MUSWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUSWebView.m; sourceTree = "<group>"; };
 		2C93B80E19625AD200F06F44 /* String+Lookup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Lookup.swift"; sourceTree = "<group>"; };
 		2C9C5D5C196152340098CBAC /* MacDown-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MacDown-Bridging-Header.h"; sourceTree = "<group>"; };
 		2C9C5D5D196152350098CBAC /* MUSMainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUSMainController.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 			children = (
 				1F0D9D63194AC7CF008E1856 /* MPUtilities.h */,
 				1F0D9D64194AC7CF008E1856 /* MPUtilities.m */,
+				2C0CD0D119653D7000111223 /* MBSwizzler.swift */,
 			);
 			name = Utility;
 			path = Code/Utility;
@@ -224,10 +227,10 @@
 			children = (
 				1F002A21195B3DAE008B8D93 /* MPRenderer.h */,
 				1F002A22195B3DAE008B8D93 /* MPRenderer.m */,
-				1F0D9D91194AC852008E1856 /* MPDocument.h */,
-				1F0D9D92194AC852008E1856 /* MPDocument.m */,
+				2C0CD0D61965447E00111223 /* MUSWebView.h */,
+				2C0CD0D71965447E00111223 /* MUSWebView.m */,
 				2C9C5D6119615D850098CBAC /* MUSDocument.swift */,
-				1F0D9D83194AC83C008E1856 /* MPDocument.xib */,
+				1F0D9D83194AC83C008E1856 /* MUSDocument.xib */,
 			);
 			name = Document;
 			path = Code/Document;
@@ -484,7 +487,7 @@
 			files = (
 				1F8A82D919533E9300B6BF69 /* Prism in Resources */,
 				1F9A14EF194EEEDD00D1C6A9 /* Styles in Resources */,
-				1F0D9DB0194AC9EE008E1856 /* MPDocument.xib in Resources */,
+				1F0D9DB0194AC9EE008E1856 /* MUSDocument.xib in Resources */,
 				1F0D9DB1194AC9EE008E1856 /* MPEditorPreferencesViewController.xib in Resources */,
 				1F9A14F4194EF6A600D1C6A9 /* Themes in Resources */,
 				1F0D9DB2194AC9EE008E1856 /* MPHtmlPreferencesViewController.xib in Resources */,
@@ -602,6 +605,7 @@
 				1F8A835E1953454F00B6BF69 /* HGMarkdownHighlightingStyle.m in Sources */,
 				1F0D9D67194AC7CF008E1856 /* MPUtilities.m in Sources */,
 				1F0D9D78194AC7F7008E1856 /* MPHtmlPreferencesViewController.m in Sources */,
+				2C0CD0D219653D7000111223 /* MBSwizzler.swift in Sources */,
 				1F0D9D7C194AC7F7008E1856 /* MPPreferences.m in Sources */,
 				1F0D9DAF194AC905008E1856 /* main.m in Sources */,
 				1F0D9D66194AC7CF008E1856 /* NSTextView+Autocomplete.m in Sources */,
@@ -609,11 +613,11 @@
 				2C9C5D5E196152350098CBAC /* MUSMainController.swift in Sources */,
 				1FBBD4CB194CA36500BB3C88 /* hoedown_html_patch.c in Sources */,
 				1F8A8364195346B200B6BF69 /* pmh_styleparser.c in Sources */,
-				1F0D9D93194AC852008E1856 /* MPDocument.m in Sources */,
 				1F0D9D76194AC7F7008E1856 /* MPEditorPreferencesViewController.m in Sources */,
 				2C9C5D60196155220098CBAC /* MUSExportPanelAccessoryViewController.swift in Sources */,
 				1F8A83621953461800B6BF69 /* pmh_parser.c in Sources */,
 				1F8A835D1953454F00B6BF69 /* HGMarkdownHighlighter.m in Sources */,
+				2C0CD0D81965447E00111223 /* MUSWebView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -650,12 +654,12 @@
 			name = MainMenu.xib;
 			sourceTree = "<group>";
 		};
-		1F0D9D83194AC83C008E1856 /* MPDocument.xib */ = {
+		1F0D9D83194AC83C008E1856 /* MUSDocument.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				1F0D9D84194AC83C008E1856 /* Base */,
 			);
-			name = MPDocument.xib;
+			name = MUSDocument.xib;
 			path = ../..;
 			sourceTree = "<group>";
 		};

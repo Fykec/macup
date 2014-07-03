@@ -75,7 +75,126 @@ extension MPPreferences {
     }
 }
 
-class MUSDocument : NSDocument, NSTextViewDelegate, MPRendererDataSource, MPRendererDelegate
+//http://stackoverflow.com/questions/24274533/xcode-6-swift-nstextviewdelegate-compile-error
+class TextViewDelegate: NSObject
+{
+    //NSTextViewDelegate
+
+    func textView(textView: NSTextView!, doCommandBySelector commandSelector: Selector) -> Bool
+    {
+
+        if (commandSelector == NSSelectorFromString("insertTab:"))
+        {
+            return !(self.textViewShouldInsertTab(textView))
+        }
+        else if (commandSelector == NSSelectorFromString("insertNewline:"))
+        {
+            return !self.textViewShouldInsertNewline(textView)
+        }
+        else if (commandSelector == NSSelectorFromString("deleteBackward:"))
+        {
+            return !self.textViewShouldDeleteBackward(textView)
+        }
+        return false
+    }
+
+    func textView(textView: NSTextView!, shouldChangeTextInRange affectedCharRange: NSRange, replacementString: String!) -> Bool
+    {
+        if (MPPreferences.sharedInstance().editorCompleteMatchingCharacters)
+        {
+            let strikethrough:Bool = MPPreferences.sharedInstance().extensionStrikethough
+            if (textView.completeMatchingCharactersForTextInRange(affectedCharRange, withString: replacementString, strikethroughEnabled: strikethrough))
+            {
+                return false;
+            }
+        }
+        return true
+    }
+
+    //Fake NSTextViewDelegate
+
+    func textViewShouldInsertTab(textView:NSTextView!) ->Bool
+    {
+        if (MPPreferences.sharedInstance().editorConvertTabs)
+        {
+            textView.insertSpacesForTab()
+            return false
+        }
+        return true
+    }
+
+    func textViewShouldInsertNewline(textView:NSTextView!) ->Bool
+    {
+        if (textView.insertMappedContent())
+        {
+            return false
+        }
+        if (textView.completeNextLine())
+        {
+            return false
+        }
+        return true
+    }
+
+    func textViewShouldDeleteBackward(textView:NSTextView!) ->Bool
+    {
+        if (MPPreferences.sharedInstance().editorCompleteMatchingCharacters)
+        {
+            let location = textView.selectedRange().location
+            textView.deleteMatchingCharactersAround(location)
+        }
+        if (MPPreferences.sharedInstance().editorConvertTabs)
+        {
+            let location = textView.selectedRange().location
+            textView.unindentForSpacesBefore(location)
+        }
+        return true
+    }
+    
+}
+
+class MUSTextView : NSTextView
+{
+    let mus_delegate = TextViewDelegate()
+
+    override func doCommandBySelector(aSelector: Selector) {
+        if !mus_delegate.textView(self, doCommandBySelector: aSelector) {
+            super.doCommandBySelector(aSelector)
+        }
+    }
+
+    override func shouldChangeTextInRange(affectedCharRange: NSRange, replacementString: String!) -> Bool
+    {
+        return mus_delegate.textView(self, shouldChangeTextInRange: affectedCharRange, replacementString: replacementString);
+    }
+
+    override func insertNewline(sender: AnyObject!)
+    {
+        if (mus_delegate.textViewShouldInsertNewline(self))
+        {
+            super.insertNewline(sender)
+        }
+    }
+
+    override func insertTab(sender: AnyObject!)
+    {
+        if (mus_delegate.textViewShouldInsertTab(self))
+        {
+            super.insertTab(sender)
+        }
+    }
+
+    override func deleteBackward(sender: AnyObject!)
+    {
+        if (mus_delegate.textViewShouldDeleteBackward(self))
+        {
+            super.deleteBackward(sender)
+        }
+    }
+
+}
+
+class MUSDocument : NSDocument, MPRendererDataSource, MPRendererDelegate, MUSPreviewDelegate
 {
     var preferences:MPPreferences {
         get {
@@ -84,20 +203,20 @@ class MUSDocument : NSDocument, NSTextViewDelegate, MPRendererDataSource, MPRend
     }
 
     @IBOutlet weak var splitView:NSSplitView
-    @IBOutlet weak var editor:NSTextView
-    @IBOutlet weak var preview:WebView
+    var editor:MUSTextView!
+    @IBOutlet weak var preview:MUSWebView
     var highlighter:HGMarkdownHighlighter!
     var renderer:MPRenderer!
     var manualRender:Bool!
-    var previewFlushDisabled:Bool!
-    var isLoadingPreview:Bool!
-    var loadedString:NSString?
+    var loadedString:NSString!
+    var makesCustomWindowControllers = true
 
 
 
     init()
     {
         super.init()
+
     }
 
     deinit
@@ -109,14 +228,24 @@ class MUSDocument : NSDocument, NSTextViewDelegate, MPRendererDataSource, MPRend
 
 //Overrride
 
-    func windowNibName() -> NSString
-    {
-        return "MPDocument"
+    override var windowNibName: String {
+    // Returns the nib file name of the document
+    // If you need to use a subclass of NSWindowController or if your document supports multiple NSWindowControllers, you should remove this property and override -makeWindowControllers instead.
+    return "MUSDocument"
     }
 
     override func windowControllerDidLoadNib(controller: NSWindowController!)
     {
         super.windowControllerDidLoadNib(controller)
+
+        let contentSubViews = controller.window.contentView.subviews as NSView[]
+        let splitView = contentSubViews[0]
+        let splitSubviews = splitView.subviews as NSView[]
+        let scrollView = splitSubviews[0]
+        let scrollSubViews = scrollView.subviews as NSView[]
+        let clipView = scrollSubViews[0]
+        let clipSubViews = clipView.subviews as NSView[]
+        self.editor = clipSubViews[0] as MUSTextView
 
         var autosaveName = "Markdown"
         if (self.fileURL)
@@ -136,8 +265,9 @@ class MUSDocument : NSDocument, NSTextViewDelegate, MPRendererDataSource, MPRend
         self.editor.automaticDashSubstitutionEnabled = false
         self.setupEditor()
 
-        self.preview.frameLoadDelegate = self
-        self.preview.policyDelegate = self
+        self.preview.previewDelegate = self
+
+        println(self.preview)
 
         let center = NSNotificationCenter.defaultCenter()
 
@@ -154,10 +284,19 @@ class MUSDocument : NSDocument, NSTextViewDelegate, MPRendererDataSource, MPRend
         }
     }
 
-    class func autorsavsInPlace() -> Bool
-    {
+
+    override class func autosavesInPlace() -> Bool {
         return true
     }
+
+    // MARK: NSDocument Overrides
+
+    // Create window controllers from a storyboard, if desired (based on `makesWindowControllers`).
+    // The window controller that's used is the initial controller set in the storyboard.
+    override func makeWindowControllers() {
+        super.makeWindowControllers()
+    }
+
 
     override func dataOfType(typeName: String!, error outError: NSErrorPointer) -> NSData!
     {
@@ -187,120 +326,9 @@ class MUSDocument : NSDocument, NSTextViewDelegate, MPRendererDataSource, MPRend
         return frameView.printOperationWithPrintInfo(printInfo)
     }
 
-    //NSTextViewDelegate
-
-    func textView(textView: NSTextView!, doCommandBySelector commandSelector: Selector) -> Bool
+    func previewNeedSyncScroller(preview:WebView!)
     {
-
-        if (commandSelector == NSSelectorFromString("insertTab:"))
-        {
-            return !(self.textViewShouldInsertTab(textView))
-        }
-        else if (commandSelector == NSSelectorFromString("insertNewline:"))
-        {
-            return !self.textViewShouldInsertNewline(textView)
-        }
-        else if (commandSelector == NSSelectorFromString("deleteBackward:"))
-        {
-            return !self.textViewShouldDeleteBackward(textView)
-        }
-        return false
-    }
-
-    func textView(textView: NSTextView!, shouldChangeTextInRange affectedCharRange: NSRange, replacementString: String!) -> Bool
-    {
-        if (self.preferences.editorCompleteMatchingCharacters)
-        {
-            let strikethrough:Bool = self.preferences.extensionStrikethough
-            if (textView.completeMatchingCharactersForTextInRange(affectedCharRange, withString: replacementString, strikethroughEnabled: strikethrough))
-            {
-                return false;
-            }
-        }
-        return true
-    }
-
-//Fake NSTextViewDelegate
-
-    func textViewShouldInsertTab(textView:NSTextView!) ->Bool
-    {
-        if (self.preferences.editorConvertTabs)
-        {
-            textView.insertSpacesForTab()
-            return false
-        }
-        return true
-    }
-
-    func textViewShouldInsertNewline(textView:NSTextView!) ->Bool
-    {
-        if (textView.insertMappedContent())
-        {
-            return false
-        }
-        if (textView.completeNextLine())
-        {
-            return false
-        }
-        return true
-    }
-
-    func textViewShouldDeleteBackward(textView:NSTextView!) ->Bool
-    {
-        if (self.preferences.editorCompleteMatchingCharacters)
-        {
-            let location = self.editor.selectedRange().location
-            textView.deleteMatchingCharactersAround(location)
-        }
-        if (self.preferences.editorConvertTabs)
-        {
-            let location = self.editor.selectedRange().location
-            textView.unindentForSpacesBefore(location)
-        }
-        return true
-    }
-
-
-
-   override func webView(sender: WebView!, didCommitLoadForFrame frame: WebFrame!)
-    {
-        if (!self.previewFlushDisabled && sender.window)
-        {
-            self.previewFlushDisabled = true
-            sender.window.disableFlushWindow()
-        }
-    }
-
-    override func webView(sender: WebView!, didFinishLoadForFrame frame: WebFrame!)
-    {
-        self.isLoadingPreview = false
-        NSOperationQueue.mainQueue().addOperationWithBlock(){
-            if (self.previewFlushDisabled)
-            {
-                sender.window.enableFlushWindow()
-                self.previewFlushDisabled = false
-            }
-            self.syncScrollers()
-        }
-
-    }
-
-    override func webView(sender: WebView!, didFailLoadWithError error: NSError!, forFrame frame: WebFrame!)
-    {
-        self.webView(sender, didFinishLoadForFrame: frame)
-    }
-
-    override func webView(webView: WebView!, decidePolicyForNavigationAction actionInformation: NSDictionary!, request: NSURLRequest!, frame: WebFrame!, decisionListener listener: WebPolicyDecisionListener!)
-    {
-        if (self.isLoadingPreview)
-        {
-            listener.use()
-        }
-        else
-        {
-            listener.ignore()
-            NSWorkspace.sharedWorkspace().openURL(request.URL)
-        }
+        self.syncScrollers()
     }
 
     //MPRendererDataSource
@@ -312,21 +340,25 @@ class MUSDocument : NSDocument, NSTextViewDelegate, MPRendererDataSource, MPRend
 
     func rendererHTMLTitle(renderer: MPRenderer!) -> String!
     {
-        var name = self.fileURL.lastPathComponent
-
-        if (name.hasSuffix(".md"))
-        {
-            name = name.substringToIndex(-3)
-        }
-        else if (name.hasSuffix(".markdown"))
-        {
-            name = name.substringToIndex(-9)
-        }
+        var name = self.fileURL?.lastPathComponent
 
         if (name)
         {
-            return name;
+            if (name!.hasSuffix(".md"))
+            {
+                name = name!.substringToIndex(-3)
+            }
+            else if (name!.hasSuffix(".markdown"))
+            {
+                name = name!.substringToIndex(-9)
+            }
+
+            if (name)
+            {
+                return name;
+            }
         }
+
         return ""
     }
 
@@ -369,7 +401,7 @@ class MUSDocument : NSDocument, NSTextViewDelegate, MPRendererDataSource, MPRend
         {
             baseURL = self.preferences.htmlDefaultDirectoryUrl
         }
-        self.isLoadingPreview = true
+        self.preview.isLoadingPreview = true
         self.preview.mainFrame.loadHTMLString(html, baseURL: baseURL)
     }
 
@@ -627,7 +659,7 @@ class MUSDocument : NSDocument, NSTextViewDelegate, MPRendererDataSource, MPRend
 
         let style = NSMutableParagraphStyle()
         style.lineSpacing == self.preferences.editorLineSpacing
-        self.editor.defaultParagraphStyle = style.copy() as NSMutableParagraphStyle
+        self.editor.defaultParagraphStyle = style as NSMutableParagraphStyle
 
         self.editor.textColor = nil
         self.editor.backgroundColor = nil

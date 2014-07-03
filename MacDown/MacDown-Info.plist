@@ -29,7 +29,7 @@
 			<key>LSTypeIsPackage</key>
 			<integer>0</integer>
 			<key>NSDocumentClass</key>
-			<string>MPDocument</string>
+			<string>${PRODUCT_MODULE_NAME}.MUSDocument</string>
 		</dict>
 	</array>
 	<key>CFBundleExecutable</key>
