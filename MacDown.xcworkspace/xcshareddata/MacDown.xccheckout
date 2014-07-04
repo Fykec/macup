@@ -5,36 +5,36 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>2131A6F9-4F4A-4132-A7C7-86E3CE5DD4FB</string>
+	<string>01254F49-FB0E-4283-B3AC-15A41AD61F53</string>
 	<key>IDESourceControlProjectName</key>
 	<string>MacDown</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>69C569CB-1F6C-4CD2-B0B6-13C61B55C751</key>
-		<string>ssh://github.com/uranusjr/macdown.git</string>
+		<key>1C1892F8-41FB-4B59-B39E-8B185255736B</key>
+		<string>https://github.com/Fykec/macup.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>MacDown.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>69C569CB-1F6C-4CD2-B0B6-13C61B55C751</key>
+		<key>1C1892F8-41FB-4B59-B39E-8B185255736B</key>
 		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://github.com/uranusjr/macdown.git</string>
+	<string>https://github.com/Fykec/macup.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>69C569CB-1F6C-4CD2-B0B6-13C61B55C751</string>
+	<string>1C1892F8-41FB-4B59-B39E-8B185255736B</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>69C569CB-1F6C-4CD2-B0B6-13C61B55C751</string>
+			<string>1C1892F8-41FB-4B59-B39E-8B185255736B</string>
 			<key>IDESourceControlWCCName</key>
-			<string>macdown</string>
+			<string>macup</string>
 		</dict>
 	</array>
 </dict>

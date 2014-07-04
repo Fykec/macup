@@ -43,3 +43,4 @@ void hoedown_patch_render_blockcode(
 
 	HOEDOWN_BUFPUTSL(ob, "</code></pre>\n");
 }
+

@@ -194,7 +194,7 @@ class MUSTextView : NSTextView
 
 }
 
-class MUSDocument : NSDocument, MPRendererDataSource, MPRendererDelegate, MUSPreviewDelegate
+class MUSDocument : NSDocument, MUSRendererDataSource, MUSRendererDelegate, MUSPreviewDelegate
 {
     var preferences:MPPreferences {
         get {
@@ -206,7 +206,7 @@ class MUSDocument : NSDocument, MPRendererDataSource, MPRendererDelegate, MUSPre
     var editor:MUSTextView!
     @IBOutlet weak var preview:MUSWebView
     var highlighter:HGMarkdownHighlighter!
-    var renderer:MPRenderer!
+    var renderer:MUSRenderer!
     var manualRender:Bool!
     var loadedString:NSString!
     var makesCustomWindowControllers = true
@@ -256,9 +256,9 @@ class MUSDocument : NSDocument, MPRendererDataSource, MPRendererDelegate, MUSPre
         controller.window.setFrameAutosaveName(autosaveName)
 
         self.highlighter = HGMarkdownHighlighter(textView: self.editor, waitInterval: 0.1)
-        self.renderer = MPRenderer()
-        self.renderer!.dataSource = self
-        self.renderer!.delegate = self
+        self.renderer = MUSRenderer()
+        self.renderer.dataSource = self
+        self.renderer.delegate = self
 
         self.editor.automaticQuoteSubstitutionEnabled = false
         self.editor.automaticLinkDetectionEnabled = false
@@ -331,14 +331,14 @@ class MUSDocument : NSDocument, MPRendererDataSource, MPRendererDelegate, MUSPre
         self.syncScrollers()
     }
 
-    //MPRendererDataSource
+    //MUSRendererDataSource
 
-    func rendererMarkdown(renderer: MPRenderer!) -> String!
+    func rendererMarkdown(renderer: MUSRenderer!) -> String!
     {
         return self.editor.string
     }
 
-    func rendererHTMLTitle(renderer: MPRenderer!) -> String!
+    func rendererHTMLTitle(renderer: MUSRenderer!) -> String!
     {
         var name = self.fileURL?.lastPathComponent
 
@@ -362,37 +362,37 @@ class MUSDocument : NSDocument, MPRendererDataSource, MPRendererDelegate, MUSPre
         return ""
     }
 
-    func rendererExtensions(renderer: MPRenderer!) -> CInt
+    func rendererExtensions(renderer: MUSRenderer!) -> Int
     {
-        return self.preferences.extensionFlags()
+        return Int(self.preferences.extensionFlags())
     }
 
-    func rendererHasSmartyPants(renderer: MPRenderer!) -> Bool
+    func rendererHasSmartyPants(renderer: MUSRenderer!) -> Bool
     {
         return self.preferences.extensionSmartyPants
     }
 
-    func rendererStyleName(renderer: MPRenderer!) -> String!
+    func rendererStyleName(renderer: MUSRenderer!) -> String!
     {
         return self.preferences.htmlStyleName
     }
 
-    func rendererHasSyntaxHighlighting(renderer: MPRenderer!) -> Bool
+    func rendererHasSyntaxHighlighting(renderer: MUSRenderer!) -> Bool
     {
         return self.preferences.htmlSyntaxHighlighting
     }
 
-    func rendererHasMathJax(renderer: MPRenderer!) -> Bool
+    func rendererHasMathJax(renderer: MUSRenderer!) -> Bool
     {
         return self.preferences.htmlMathJax
     }
 
-    func rendererHighlightingThemeName(renderer: MPRenderer!) -> String!
+    func rendererHighlightingThemeName(renderer: MUSRenderer!) -> String!
     {
         return self.preferences.htmlHighlightingThemeName
     }
 
-    func renderer(renderer: MPRenderer!, didProduceHTMLOutput html: String!)
+    func renderer(renderer: MUSRenderer!, didProduceHTMLOutput html: String!)
     {
         self.manualRender = self.preferences.markdownManualRender
 
@@ -441,10 +441,13 @@ class MUSDocument : NSDocument, MPRendererDataSource, MPRendererDelegate, MUSPre
 
     @IBAction func copyHtml(sender:AnyObject)
     {
-        self.preview.setSelectedDOMRange(nil, affinity: NSSelectionAffinity.Upstream)
-        let pasteboard = NSPasteboard.generalPasteboard()
-        pasteboard.clearContents()
-        pasteboard.writeObjects([self.renderer.currentHtml()])
+        if (self.renderer.currentHtml)
+        {
+            self.preview.setSelectedDOMRange(nil, affinity: NSSelectionAffinity.Upstream)
+            let pasteboard = NSPasteboard.generalPasteboard()
+            pasteboard.clearContents()
+            pasteboard.writeObjects([self.renderer.currentHtml!])
+        }
     }
 
     @IBAction func exportHtml(sender:AnyObject)

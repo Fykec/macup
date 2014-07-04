@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1F002A23195B3DAE008B8D93 /* MPRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F002A22195B3DAE008B8D93 /* MPRenderer.m */; };
 		1F0D9D65194AC7CF008E1856 /* NSString+Lookup.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0D9D5F194AC7CF008E1856 /* NSString+Lookup.m */; };
 		1F0D9D66194AC7CF008E1856 /* NSTextView+Autocomplete.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0D9D61194AC7CF008E1856 /* NSTextView+Autocomplete.m */; };
 		1F0D9D67194AC7CF008E1856 /* MPUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0D9D64194AC7CF008E1856 /* MPUtilities.m */; };
@@ -48,10 +47,13 @@
 		1FFF301D1948A5320009AF24 /* MPStringLookupTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FFF301C1948A5320009AF24 /* MPStringLookupTests.m */; };
 		2C0CD0D219653D7000111223 /* MBSwizzler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0CD0D119653D7000111223 /* MBSwizzler.swift */; };
 		2C0CD0D81965447E00111223 /* MUSWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0CD0D71965447E00111223 /* MUSWebView.m */; };
+		2C1F58B019654CB400DD951C /* MUSRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1F58AF19654CB400DD951C /* MUSRenderer.swift */; };
+		2C1F58B21965518C00DD951C /* MUSHoedown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1F58B11965518C00DD951C /* MUSHoedown.swift */; };
 		2C93B80F19625AD200F06F44 /* String+Lookup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C93B80E19625AD200F06F44 /* String+Lookup.swift */; };
 		2C9C5D5E196152350098CBAC /* MUSMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9C5D5D196152350098CBAC /* MUSMainController.swift */; };
 		2C9C5D60196155220098CBAC /* MUSExportPanelAccessoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9C5D5F196155220098CBAC /* MUSExportPanelAccessoryViewController.swift */; };
 		2C9C5D6219615D850098CBAC /* MUSDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9C5D6119615D850098CBAC /* MUSDocument.swift */; };
+		2CBBCB561966D1D000907DDA /* MUSHoedownHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBBCB551966D1D000907DDA /* MUSHoedownHelper.m */; };
 		5318159056384894AA42DB4F /* libPods-MacDownTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AEAF42BBDCEC4012B5092BB3 /* libPods-MacDownTests.a */; };
 		B49728377A904875B2963C38 /* libPods-MacDown.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C5C1FBBB3ED456285901D31 /* libPods-MacDown.a */; };
 /* End PBXBuildFile section */
@@ -74,8 +76,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1F002A21195B3DAE008B8D93 /* MPRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPRenderer.h; sourceTree = "<group>"; };
-		1F002A22195B3DAE008B8D93 /* MPRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPRenderer.m; sourceTree = "<group>"; };
 		1F0D9D5E194AC7CF008E1856 /* NSString+Lookup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Lookup.h"; sourceTree = "<group>"; };
 		1F0D9D5F194AC7CF008E1856 /* NSString+Lookup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Lookup.m"; sourceTree = "<group>"; };
 		1F0D9D60194AC7CF008E1856 /* NSTextView+Autocomplete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTextView+Autocomplete.h"; sourceTree = "<group>"; };
@@ -140,11 +140,15 @@
 		2C0CD0D119653D7000111223 /* MBSwizzler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBSwizzler.swift; sourceTree = "<group>"; };
 		2C0CD0D61965447E00111223 /* MUSWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUSWebView.h; sourceTree = "<group>"; };
 		2C0CD0D71965447E00111223 /* MUSWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUSWebView.m; sourceTree = "<group>"; };
+		2C1F58AF19654CB400DD951C /* MUSRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUSRenderer.swift; sourceTree = "<group>"; };
+		2C1F58B11965518C00DD951C /* MUSHoedown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUSHoedown.swift; sourceTree = "<group>"; };
 		2C93B80E19625AD200F06F44 /* String+Lookup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Lookup.swift"; sourceTree = "<group>"; };
 		2C9C5D5C196152340098CBAC /* MacDown-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MacDown-Bridging-Header.h"; sourceTree = "<group>"; };
 		2C9C5D5D196152350098CBAC /* MUSMainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUSMainController.swift; sourceTree = "<group>"; };
 		2C9C5D5F196155220098CBAC /* MUSExportPanelAccessoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUSExportPanelAccessoryViewController.swift; sourceTree = "<group>"; };
 		2C9C5D6119615D850098CBAC /* MUSDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUSDocument.swift; sourceTree = "<group>"; };
+		2CBBCB541966D1D000907DDA /* MUSHoedownHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUSHoedownHelper.h; sourceTree = "<group>"; };
+		2CBBCB551966D1D000907DDA /* MUSHoedownHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUSHoedownHelper.m; sourceTree = "<group>"; };
 		7C5C1FBBB3ED456285901D31 /* libPods-MacDown.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MacDown.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F8797E748AA4BCA96DFA790 /* Pods-MacDown.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MacDown.xcconfig"; path = "Pods/Pods-MacDown.xcconfig"; sourceTree = "<group>"; };
 		AB3B8954FAB54E3C803DDAEE /* Pods-MacDownTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MacDownTests.xcconfig"; path = "Pods/Pods-MacDownTests.xcconfig"; sourceTree = "<group>"; };
@@ -185,6 +189,8 @@
 				1F0D9D61194AC7CF008E1856 /* NSTextView+Autocomplete.m */,
 				1FBBD4C9194CA35900BB3C88 /* hoedown_html_patch.h */,
 				1FBBD4CA194CA36500BB3C88 /* hoedown_html_patch.c */,
+				2CBBCB541966D1D000907DDA /* MUSHoedownHelper.h */,
+				2CBBCB551966D1D000907DDA /* MUSHoedownHelper.m */,
 			);
 			name = Extension;
 			path = Code/Extension;
@@ -225,8 +231,8 @@
 		1F0D9D90194AC852008E1856 /* Document */ = {
 			isa = PBXGroup;
 			children = (
-				1F002A21195B3DAE008B8D93 /* MPRenderer.h */,
-				1F002A22195B3DAE008B8D93 /* MPRenderer.m */,
+				2C1F58B11965518C00DD951C /* MUSHoedown.swift */,
+				2C1F58AF19654CB400DD951C /* MUSRenderer.swift */,
 				2C0CD0D61965447E00111223 /* MUSWebView.h */,
 				2C0CD0D71965447E00111223 /* MUSWebView.m */,
 				2C9C5D6119615D850098CBAC /* MUSDocument.swift */,
@@ -603,17 +609,19 @@
 				1F0D9D7D194AC7F7008E1856 /* MPPreferencesViewController.m in Sources */,
 				1F0D9D65194AC7CF008E1856 /* NSString+Lookup.m in Sources */,
 				1F8A835E1953454F00B6BF69 /* HGMarkdownHighlightingStyle.m in Sources */,
+				2CBBCB561966D1D000907DDA /* MUSHoedownHelper.m in Sources */,
 				1F0D9D67194AC7CF008E1856 /* MPUtilities.m in Sources */,
 				1F0D9D78194AC7F7008E1856 /* MPHtmlPreferencesViewController.m in Sources */,
+				2C1F58B019654CB400DD951C /* MUSRenderer.swift in Sources */,
 				2C0CD0D219653D7000111223 /* MBSwizzler.swift in Sources */,
 				1F0D9D7C194AC7F7008E1856 /* MPPreferences.m in Sources */,
 				1F0D9DAF194AC905008E1856 /* main.m in Sources */,
 				1F0D9D66194AC7CF008E1856 /* NSTextView+Autocomplete.m in Sources */,
-				1F002A23195B3DAE008B8D93 /* MPRenderer.m in Sources */,
 				2C9C5D5E196152350098CBAC /* MUSMainController.swift in Sources */,
 				1FBBD4CB194CA36500BB3C88 /* hoedown_html_patch.c in Sources */,
 				1F8A8364195346B200B6BF69 /* pmh_styleparser.c in Sources */,
 				1F0D9D76194AC7F7008E1856 /* MPEditorPreferencesViewController.m in Sources */,
+				2C1F58B21965518C00DD951C /* MUSHoedown.swift in Sources */,
 				2C9C5D60196155220098CBAC /* MUSExportPanelAccessoryViewController.swift in Sources */,
 				1F8A83621953461800B6BF69 /* pmh_parser.c in Sources */,
 				1F8A835D1953454F00B6BF69 /* HGMarkdownHighlighter.m in Sources */,
