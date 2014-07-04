@@ -1,4 +1,4 @@
-# MacDown
+# MacUp from MacDown, rewrite by Swift
 
 MacDown is an open source Markdown editor for OS X, released under the MIT License. It is heavily influenced by [Chen Luo](https://twitter.com/chenluois)’s [Mou](http://mouapp.com).
 
