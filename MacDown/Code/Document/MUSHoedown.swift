@@ -88,13 +88,13 @@ func MUSHTMLFromMarkdown(text:NSString, flags:CUnsignedInt, smartypants:Bool, re
     return result
 }
 
-func MUSGetHTML(title:NSString?, body:NSString, stylesrc:Array<NSURL>, styleopt:MUSAssetsOption, scriptsrc:Array<NSURL>, scriptopt:MUSAssetsOption) -> NSString
+func MUSGetHTML( title:NSString?, body:NSString,  stylesrc:Array<NSURL>,  styleopt:MUSAssetsOption,  scriptsrc:Array<NSURL>, scriptopt:MUSAssetsOption) -> NSString
 {
     var styles:NSMutableArray = NSMutableArray()
     var styleOption = styleopt
     var scriptOption = scriptopt
 
-    for url in stylesrc as Array<NSURL>
+    for url in stylesrc
     {
         var s:NSString?
         if (!url.fileURL)
@@ -160,59 +160,4 @@ func MUSGetHTML(title:NSString?, body:NSString, stylesrc:Array<NSURL>, styleopt:
     return  NSString(format:"<!DOCTYPE html><html>\n\n<head>\n<meta charset=\"utf-8\">\n%@%@\n</head><body>\n%@\n%@\n</body>\n\n</html>\n", t!, style, body, script)
 }
 
-//let aliasMap = [
-//    "objective-c": "objectivec",
-//    "obj-c": "objectivec",
-//    "objc": "objectivec",
-//    "html": "markup",
-//    "xml": "markup"]
-//
-//let dependencyMap = [
-//    "aspnet": "markup",
-//    "bash": "clike",
-//    "c": "clike",
-//    "coffeescript": "javascript",
-//    "cpp": "c",
-//    "csharp": "clike",
-//    "go": "clike",
-//    "groovy": "clike",
-//    "java": "clike",
-//    "javascript": "clike",
-//    "objectivec": "c",
-//    "php": "clike",
-//    "ruby": "clike",
-//    "scala": "java",
-//    "scss": "css",
-//    "swift": "clike"]
-//
-//func laguage_addition(language:UnsafePointer<hoedown_buffer>, owner:MUSRenderer) -> UnsafePointer<hoedown_buffer>!
-//{
-//    let renderer = owner as MUSRenderer
-//
-//    var lang:NSString?
-//    lang = NSString(bytes: language.memory.data, length: Int(language.memory.size), encoding: NSUTF8StringEncoding)
-//
-//    var mapped:UnsafePointer<hoedown_buffer>?
-//    if (aliasMap[lang!])
-//    {
-//        lang = aliasMap[lang!]
-//        let data = lang!.dataUsingEncoding(NSUTF8StringEncoding)
-//        mapped = hoedown_buffer_new(64)
-//        hoedown_buffer_put(mapped!, data.bytes, UInt(data.length))
-//    }
-//
-//    var langugates = renderer.currentLanguages
-//    while (lang)
-//    {
-//        let index = langugates.indexOfObject(lang!)
-//        if (index != NSNotFound)
-//        {
-//            langugates.removeObjectAtIndex(index)
-//        }
-//        langugates.insertObject(lang, atIndex: 0)
-//        lang = dependencyMap[lang!]
-//    }
-//
-//    return mapped!
-//}
 

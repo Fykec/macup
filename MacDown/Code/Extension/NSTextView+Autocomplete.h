@@ -30,6 +30,6 @@
 - (void)indentSelectedLinesWithPadding:(NSString *)padding;
 - (void)unindentSelectedLines;
 - (BOOL)insertMappedContent;
-- (BOOL)completeNextLine;
+//- (BOOL)completeNextLine;
 
 @end

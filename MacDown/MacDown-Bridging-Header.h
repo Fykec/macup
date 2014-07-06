@@ -18,3 +18,4 @@
 #import "NSTextView+Autocomplete.h"
 #import "MUSWebView.h"
 #import "MUSHoedownHelper.h"
+#import "NSObject+Attachment.h"

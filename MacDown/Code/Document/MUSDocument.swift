@@ -129,10 +129,6 @@ class TextViewDelegate: NSObject
         {
             return false
         }
-        if (textView.completeNextLine())
-        {
-            return false
-        }
         return true
     }
 
@@ -170,10 +166,16 @@ class MUSTextView : NSTextView
 
     override func insertNewline(sender: AnyObject!)
     {
-        if (mus_delegate.textViewShouldInsertNewline(self))
+        if (self.insertMappedContent())
         {
-            super.insertNewline(sender)
+            return
         }
+        else if (self.completeNextLine())
+        {
+            return
+        }
+
+        super.insertNewline(sender)
     }
 
     override func insertTab(sender: AnyObject!)
@@ -192,24 +194,137 @@ class MUSTextView : NSTextView
         }
     }
 
+    func completeNextLine() -> Bool
+    {
+        let selectedRange = self.selectedRange
+        var location = selectedRange.location
+        let content = self.string
+
+        if (selectedRange.length > 0)
+        {
+            return false
+        }
+
+        if (content.isEmpty)
+        {
+            return false
+        }
+
+
+        let start = content.locationOfFirstNewlineBefore(location) + 1
+        let end = location
+        let nonwhitespace = content.locationOfFirstNonWhitespaceCharacterInLineBefore(location)
+
+        if (nonwhitespace == location)
+        {
+            return false
+        }
+
+        let range = NSMakeRange(start, end - start)
+        let line = content.substring(start, length: end-start)
+
+        let options = NSRegularExpressionOptions.AnchorsMatchLines
+
+        let regex = NSRegularExpression(pattern:"^(\\s*)((?:(?:\\*|\\+|-|)\\s+)?)((?:\\d+\\.\\s+)?)(\\S)?", options: options, error: nil)
+        let result:NSTextCheckingResult! = regex.firstMatchInString(line, options: NSMatchingOptions(0), range:NSMakeRange(0, 0)) as NSTextCheckingResult!
+        if (!result || result.range.location == NSNotFound)
+        {
+            return false
+        }
+
+        var indent = ""
+
+        for (var i = 0; i < result.rangeAtIndex(1).length; i++)
+        {
+            indent += " "
+        }
+
+
+        var t = ""
+
+        let isUl = result.rangeAtIndex(2).length != 0
+        let isOl = result.rangeAtIndex(3).length != 0
+
+        let previousLineEmpty = result.rangeAtIndex(4).length == 0
+        if (previousLineEmpty)
+        {
+            var replaceRange = NSMakeRange(NSNotFound, 0)
+            if (isUl)
+            {
+                replaceRange = result.rangeAtIndex(2)
+            }
+            else if (isOl)
+            {
+                replaceRange = result.rangeAtIndex(3)
+            }
+
+            if (replaceRange.length > 0)
+            {
+                let location = replaceRange.location + start
+                self.replaceCharactersInRange(NSMakeRange(location, replaceRange.length), withString: "")
+            }
+        }
+        else if (isUl)
+        {
+            let range = result.rangeAtIndex(2)
+            let length = range.length - 1
+            t = line.substring(range.location, length: length)
+
+        }
+        else if (isOl)
+        {
+            let range = result.rangeAtIndex(3)
+            let length = range.length - 1
+            let captured = line.substring(range.location, length: length)
+            let i = captured.toInt()! + 1
+            t = NSString(format: "%ld.", i) as String
+        }
+
+        super.insertNewline(self)
+
+        if (t.isEmpty)
+        {
+            return true
+        }
+
+
+        location += 1
+        let it = indent + t
+
+        let contentLength = content.lengthOfBytesUsingEncoding(NSUTF8StringEncoding)
+
+        var r = NSMakeRange(location, countElements(t))
+        if (contentLength > location + t.lengthOfBytesUsingEncoding(NSUTF8StringEncoding)
+            && content.substring(r.location, length: r.length) == t)
+        {
+            super.insertText(indent)
+            return true
+        }
+
+        r = NSMakeRange(location, it.lengthOfBytesUsingEncoding(NSUTF8StringEncoding))
+        if (contentLength > location + it.lengthOfBytesUsingEncoding(NSUTF8StringEncoding)
+            && content.substring(r.location, length: r.length) == it)
+        {
+            return true
+        }
+
+        super.insertText(it + " ")
+        return true
+    }
+
 }
 
 class MUSDocument : NSDocument, MUSRendererDataSource, MUSRendererDelegate, MUSPreviewDelegate
 {
-    var preferences:MPPreferences {
-        get {
-            return MPPreferences.sharedInstance()
-        }
-    }
+    let preferences:MPPreferences = MPPreferences.sharedInstance()
 
     @IBOutlet weak var splitView:NSSplitView
     var editor:MUSTextView!
     @IBOutlet weak var preview:MUSWebView
     var highlighter:HGMarkdownHighlighter!
     var renderer:MUSRenderer!
-    var manualRender:Bool!
-    var loadedString:NSString!
-    var makesCustomWindowControllers = true
+    var manualRender:Bool?
+    var loadedString:NSString?
 
 
 

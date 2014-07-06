@@ -1,3 +1,4 @@
+
 //
 //  String+Lookup.swift
 //  MacDown
@@ -69,7 +70,8 @@ extension String
         {
             loc = length
         }
-        var p = loc + 1
+        var p = loc - 1
+
         while (p >= 0 && !MPCharacterIsNewline(string.characterAtIndex(p)))
         {
             p--

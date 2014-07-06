@@ -113,8 +113,9 @@ class MUSRenderer : NSObject
 
     func parseAndRenderLater()
     {
-        parseLaterWithCommand(Selector("parse"), completionHandler: {
-            self.render()
+        parseLaterWithCommand(Selector("parse"), completionHandler:
+            {
+                self.render()
             })
     }
 
@@ -123,10 +124,17 @@ class MUSRenderer : NSObject
         parseLater(0.5, command: Selector("parse"), completionHandler: handler)
     }
 
+
+
     func parseLater(delay:NSTimeInterval, command action:Selector, completionHandler handler:(() -> Void)?)
     {
+
         self.parseDelayTimer?.invalidate()
-        self.parseDelayTimer = NSTimer.scheduledTimerWithTimeInterval(delay, target: self, selector: action, userInfo:["next": handler], repeats: true)
+        let timer = NSTimer(timeInterval: delay, target: self, selector: action, userInfo:nil, repeats: true)
+        timer.fire()
+        //TODO
+        timer.attachment = ["next": "true"];
+        self.parseDelayTimer = timer
     }
 
     func parseIfPreferencesChanged()
@@ -140,13 +148,13 @@ class MUSRenderer : NSObject
 
     func parse()
     {
-        var nextAction:(() -> Void)?
+//        var nextAction:(() -> Void)?
 
         if (self.parseDelayTimer)
         {
             if (self.parseDelayTimer!.valid)
             {
-                nextAction = (self.parseDelayTimer!.userInfo as Dictionary)["next"] as (() -> Void)?
+//                nextAction = (self.parseDelayTimer!.attachment as? Dictionary)!["next"] as (() -> Void)?
                 self.parseDelayTimer!.invalidate()
                 self.parseDelayTimer = nil
             }
@@ -163,10 +171,11 @@ class MUSRenderer : NSObject
         self.extensions = ext
         self.smartypants = smtpa
 
-        if (nextAction)
+        if (self.parseDelayTimer?.attachment)
         {
-            nextAction!()
+            self.render()
         }
+        
     }
 
     func renderIfPreferencesChanged()
@@ -204,6 +213,7 @@ class MUSRenderer : NSObject
             let d = self.delegate
 
             let title = self.dataSource!.rendererHTMLTitle(self)
+            NSLog("%@", self.currentHtml!)
             let html = MUSGetHTML(title, self.currentHtml!, self.stylesheets, MUSAssetsOption.FullLink, self.scripts, MUSAssetsOption.FullLink)
             d!.renderer(self, didProduceHTMLOutput: html)
 
@@ -250,7 +260,7 @@ class MUSRenderer : NSObject
             {
                 title = ""
             }
-            
+
             return MUSGetHTML(title!, self.currentHtml!, styles, stylesOption, scripts, scriptsOption)
         }
         else
@@ -259,6 +269,7 @@ class MUSRenderer : NSObject
         }
 
     }
+
 }
 
 protocol MUSRendererDataSource

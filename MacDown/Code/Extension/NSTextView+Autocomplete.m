@@ -421,6 +421,7 @@ static NSString * const kMPListLineHeadPattern =
     return YES;
 }
 
+
 - (BOOL)completeNextLine
 {
     NSRange selectedRange = self.selectedRange;
