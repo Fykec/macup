@@ -61,7 +61,7 @@ func MUSPrismScriptURLsForLanguage(language:NSString) -> Array<NSURL>
 }
 
 
-func MUSHTMLFromMarkdown(text:NSString, flags:CUnsignedInt, smartypants:Bool, renderer:CConstPointer<hoedown_renderer>) -> NSString
+func MUSHTMLFromMarkdown(text:String, flags:CUnsignedInt, smartypants:Bool, renderer:CConstPointer<hoedown_renderer>) -> String
 {
     let inputData:NSData = text.dataUsingEncoding(NSUTF8StringEncoding)
 
@@ -88,58 +88,68 @@ func MUSHTMLFromMarkdown(text:NSString, flags:CUnsignedInt, smartypants:Bool, re
     return result
 }
 
-func MUSGetHTML( title:NSString?, body:NSString,  stylesrc:Array<NSURL>,  styleopt:MUSAssetsOption,  scriptsrc:Array<NSURL>, scriptopt:MUSAssetsOption) -> NSString
+func MUSGetHTML( title:String?, body:String!,  stylesrc:Array<NSURL>,  styleopt:MUSAssetsOption,  scriptsrc:Array<NSURL>, scriptopt:MUSAssetsOption) -> String
 {
     var styles:NSMutableArray = NSMutableArray()
     var styleOption = styleopt
     var scriptOption = scriptopt
 
-    for url in stylesrc
-    {
-        var s:NSString?
-        if (!url.fileURL)
-        {
-            styleOption = MUSAssetsOption.FullLink
-        }
 
-        switch (styleOption)
-            {
-        case MUSAssetsOption.FullLink:
-            s = NSString(format: "<link rel=\"stylesheet\" type=\"text/css\" href=\"%@\">", url.absoluteString)
-        case MUSAssetsOption.Embedded:
-            s = NSString(format: "<style>\n%@\n</style>", MPReadFileOfPath(url.path))
-        default:
-            s = ""
-        }
-        if (s)
+    if (stylesrc.count > 0)
+    {
+        for url  in stylesrc as Array<NSURL>
         {
-            styles.addObject(s)
+            println(url.className)
+
+            var s:NSString?
+            if (!url.fileURL)
+            {
+                styleOption = MUSAssetsOption.FullLink
+            }
+
+            switch (styleOption)
+                {
+            case MUSAssetsOption.FullLink:
+                s = NSString(format: "<link rel=\"stylesheet\" type=\"text/css\" href=\"%@\">", url.absoluteString)
+            case MUSAssetsOption.Embedded:
+                s = NSString(format: "<style>\n%@\n</style>", MPReadFileOfPath(url.path))
+            default:
+                s = ""
+            }
+            if (s)
+            {
+                styles.addObject(s)
+            }
         }
     }
 
     let style = styles.componentsJoinedByString("\n")
 
     var scripts:NSMutableArray = NSMutableArray()
-    for url in scriptsrc as Array<NSURL>
-    {
-        var s:NSString?
-        if (!url.fileURL)
-        {
-            scriptOption = MUSAssetsOption.FullLink
-        }
 
-        switch (scriptOption)
-            {
-        case MUSAssetsOption.FullLink:
-            s = NSString(format: "<script type=\"text/javascript\" src=\"%@\"></script>", url.absoluteString)
-        case MUSAssetsOption.Embedded:
-            s = NSString(format: "<script type=\"text/javascript\">%@</script>", MPReadFileOfPath(url.path))
-        default:
-            s = ""
-        }
-        if (s)
+    if (scriptsrc.count > 0)
+    {
+        for url in scriptsrc as Array<NSURL>
         {
-            scripts.addObject(s)
+            var s:NSString?
+            if (!url.fileURL)
+            {
+                scriptOption = MUSAssetsOption.FullLink
+            }
+
+            switch (scriptOption)
+                {
+            case MUSAssetsOption.FullLink:
+                s = NSString(format: "<script type=\"text/javascript\" src=\"%@\"></script>", url.absoluteString)
+            case MUSAssetsOption.Embedded:
+                s = NSString(format: "<script type=\"text/javascript\">%@</script>", MPReadFileOfPath(url.path))
+            default:
+                s = ""
+            }
+            if (s)
+            {
+                scripts.addObject(s)
+            }
         }
     }
 

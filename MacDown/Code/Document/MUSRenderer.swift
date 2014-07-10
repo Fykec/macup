@@ -79,7 +79,7 @@ class MUSRenderer : NSObject
         return urls
     }
     }
-    var currentHtml:NSString?
+    var currentHtml:String?
     var parseDelayTimer:NSTimer?
     var extensions:Int!
     var smartypants:Bool!
@@ -87,7 +87,7 @@ class MUSRenderer : NSObject
     var mathjax:Bool!
     var syntaxHighlighting:Bool!
     var manualRender:Bool!
-    var highlightingThemeName:NSString!
+    var highlightingThemeName:String!
 
     init()
     {

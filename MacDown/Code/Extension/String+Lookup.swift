@@ -23,6 +23,12 @@ extension String
         return String(Array(self)[i])
     }
 
+    subscript(integerIndex: Int) -> Character
+        {
+        let index = advance(startIndex, integerIndex)
+            return self[index]
+    }
+
     func substring(from: Int) -> String {
         let end = countElements(self)
         return self[from..end]
@@ -30,6 +36,25 @@ extension String
     func substring(from: Int, length: Int) -> String {
         let end = from + length
         return self[from..end]
+    }
+
+    func NSRangeToRange(ocRange:NSRange) -> Range<String.Index>
+    {
+        let startIndex = advance(self.startIndex, ocRange.location)
+        let endIndex = advance(self.startIndex, ocRange.location + ocRange.length)
+
+        return Range(start: startIndex, end: endIndex)
+    }
+
+    func RangeToNSRange(range:Range<String.Index>) -> NSRange
+    {
+        let sub = self.substringWithRange(range)
+        return self.bridgeToObjectiveC().rangeOfString(sub)
+    }
+
+    func lengthOfUTF8() -> Int
+    {
+        return self.lengthOfBytesUsingEncoding(NSUTF8StringEncoding)
     }
 
 
@@ -119,9 +144,9 @@ extension String
 
     func rangeOfLinesInRange(range:NSRange) ->NSRange
     {
-        let string = self as NSString
+        let string = self
 
-        if (string.length == 0)
+        if (string.lengthOfUTF8() == 0)
         {
             return NSMakeRange(0, 0)
         }
@@ -131,11 +156,11 @@ extension String
         let start = string.locationOfFirstNewlineBefore(location) + 1
         var end = location + length - 1
 
-        if (end >= string.length - 1)
+        if (end >= string.lengthOfUTF8() - 1)
         {
-            end = string.length - 2
+            end = string.lengthOfUTF8() - 2
         }
-        if (!MPCharacterIsNewline(string.characterAtIndex(end)))
+        if (!MPCharacterIsNewline((string[end]).toUnichar()))
         {
             end = string.locationOfFirstNonWhitespaceCharacterInLineBefore(end)
         }
@@ -143,7 +168,7 @@ extension String
         {
             end = start
         }
-        if (end < string.length)
+        if (end < string.lengthOfUTF8())
         {
             end++
         }

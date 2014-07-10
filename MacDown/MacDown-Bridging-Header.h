@@ -14,8 +14,6 @@
 #import <hoedown/markdown.h>
 #import "hoedown_html_patch.h"
 #import "HGMarkdownHighlighter.h"
-#import "NSString+Lookup.h"
-#import "NSTextView+Autocomplete.h"
 #import "MUSWebView.h"
 #import "MUSHoedownHelper.h"
 #import "NSObject+Attachment.h"
