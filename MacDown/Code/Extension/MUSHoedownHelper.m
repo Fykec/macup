@@ -71,6 +71,7 @@ void setupHtmlRendererWithOwner(hoedown_renderer *htmlRenderer, void *owner)
 {
     if (htmlRenderer)
     {
+
         htmlRenderer->blockcode = hoedown_patch_render_blockcode;
 
         rndr_state_ex *state = malloc(sizeof(rndr_state_ex));
