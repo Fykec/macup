@@ -320,7 +320,7 @@ class MUSDocument : NSDocument, MUSRendererDataSource, MUSRendererDelegate, MUSP
 
     @IBOutlet weak var splitView:NSSplitView
     var editor:MUSTextView!
-    @IBOutlet weak var preview:MUSWebView
+    @IBOutlet weak var preview:MUSPreviewWebView
     var highlighter:HGMarkdownHighlighter!
     var renderer:MUSRenderer!
     var manualRender:Bool?
@@ -381,8 +381,6 @@ class MUSDocument : NSDocument, MUSRendererDataSource, MUSRendererDelegate, MUSP
         self.setupEditor()
 
         self.preview.previewDelegate = self
-
-        println(self.preview)
 
         let center = NSNotificationCenter.defaultCenter()
 

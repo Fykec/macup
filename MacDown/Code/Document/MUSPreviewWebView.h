@@ -16,7 +16,7 @@
 @end
 
 
-@interface MUSWebView : WebView
+@interface MUSPreviewWebView : WebView
 
 @property (nonatomic) BOOL previewFlushDisabled;
 

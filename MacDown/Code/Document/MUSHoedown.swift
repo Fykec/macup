@@ -97,8 +97,6 @@ func MUSGetHTML( title:String?, body:String!,  stylesrc:Array<NSURL>,  styleopt:
     {
         for url  in stylesrc as Array<NSURL>
         {
-            println(url.className)
-
             var s:NSString?
             if (!url.fileURL)
             {

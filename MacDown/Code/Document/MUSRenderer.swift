@@ -8,6 +8,10 @@
 
 import Foundation
 
+//http://stackoverflow.com/questions/24635202/swift-closure-as-values-in-dictionary
+class ClosureType {
+    var closure:(() -> Void)?
+}
 
 class MUSRenderer : NSObject
 {
@@ -125,15 +129,20 @@ class MUSRenderer : NSObject
     }
 
 
-
     func parseLater(delay:NSTimeInterval, command action:Selector, completionHandler handler:(() -> Void)?)
     {
 
         self.parseDelayTimer?.invalidate()
-        let timer = NSTimer(timeInterval: delay, target: self, selector: action, userInfo:nil, repeats: true)
-        timer.fire()
-        //TODO
-        timer.attachment = ["next": "true"];
+
+        var closure:ClosureType?
+        if (handler)
+        {
+            closure = ClosureType()
+            closure!.closure = handler
+        }
+
+        let timer = NSTimer.scheduledTimerWithTimeInterval(delay, target: self, selector: action, userInfo: closure, repeats: true)
+
         self.parseDelayTimer = timer
     }
 
@@ -148,13 +157,13 @@ class MUSRenderer : NSObject
 
     func parse()
     {
-//        var nextAction:(() -> Void)?
+        var nextAction:(() -> Void)?
 
         if (self.parseDelayTimer)
         {
             if (self.parseDelayTimer!.valid)
             {
-//                nextAction = (self.parseDelayTimer!.attachment as? Dictionary)!["next"] as (() -> Void)?
+                nextAction = (self.parseDelayTimer!.userInfo as? ClosureType)?.closure
                 self.parseDelayTimer!.invalidate()
                 self.parseDelayTimer = nil
             }
@@ -171,11 +180,10 @@ class MUSRenderer : NSObject
         self.extensions = ext
         self.smartypants = smtpa
 
-        if (self.parseDelayTimer?.attachment)
+        if (nextAction)
         {
-            self.render()
+            nextAction!()
         }
-        
     }
 
     func renderIfPreferencesChanged()
@@ -213,7 +221,6 @@ class MUSRenderer : NSObject
             let d = self.delegate
 
             let title = self.dataSource!.rendererHTMLTitle(self)
-            NSLog("%@", self.currentHtml!)
             let html = MUSGetHTML(title, self.currentHtml!, self.stylesheets, MUSAssetsOption.FullLink, self.scripts, MUSAssetsOption.FullLink)
             d!.renderer(self, didProduceHTMLOutput: html)
 

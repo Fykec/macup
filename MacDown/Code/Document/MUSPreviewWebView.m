@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 MacUp, MarkDown, Swift. All rights reserved.
 //
 
-#import "MUSWebView.h"
+#import "MUSPreviewWebView.h"
 
-@implementation MUSWebView
+@implementation MUSPreviewWebView
 
 
 - (instancetype)initWithFrame:(NSRect)frame frameName:(NSString *)frameName groupName:(NSString *)groupName
