@@ -353,13 +353,13 @@ class MUSDocument : NSDocument, MUSRendererDataSource, MUSRendererDelegate, MUSP
     {
         super.windowControllerDidLoadNib(controller)
 
-        let contentSubViews = controller.window.contentView.subviews as NSView[]
+        let contentSubViews = controller.window.contentView.subviews as [NSView]
         let splitView = contentSubViews[0]
-        let splitSubviews = splitView.subviews as NSView[]
+        let splitSubviews = splitView.subviews as [NSView]
         let scrollView = splitSubviews[0]
-        let scrollSubViews = scrollView.subviews as NSView[]
+        let scrollSubViews = scrollView.subviews as [NSView]
         let clipView = scrollSubViews[0]
-        let clipSubViews = clipView.subviews as NSView[]
+        let clipSubViews = clipView.subviews as [NSView]
         self.editor = clipSubViews[0] as MUSTextView
 
         var autosaveName = "Markdown"
@@ -434,7 +434,7 @@ class MUSDocument : NSDocument, MUSRendererDataSource, MUSRendererDelegate, MUSP
         return super.prepareSavePanel(savePanel)
     }
 
-    override func printOperationWithSettings(printSettings: NSDictionary!, error outError: NSErrorPointer) -> NSPrintOperation!
+    override func printOperationWithSettings(printSettings: [NSObject : AnyObject]!, error outError: AutoreleasingUnsafePointer<NSError?>) -> NSPrintOperation!
     {
         let frameView:WebFrameView = self.preview.mainFrame.frameView
         let printInfo = self.printInfo
@@ -793,7 +793,7 @@ class MUSDocument : NSDocument, MUSRendererDataSource, MUSRendererDelegate, MUSP
             let themeString = MPReadFileOfPath(path)
 
             self.highlighter.applyStylesFromStylesheet(themeString, withErrorHandler: {
-                (errorMessages:AnyObject[]!) in
+                (errorMessages:[AnyObject]!) in
                 self.preferences.editorStyleName = nil
                 })
         }

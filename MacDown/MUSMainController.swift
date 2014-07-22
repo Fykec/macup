@@ -8,14 +8,14 @@
 
 import Foundation
 
-//func initPreferencesWindowController() -> NSWindowController
-//{
-//    let vcs:NSArray = [MPMarkdownPreferencesViewController.init(),
-//        MPEditorPreferencesViewController.init(),
-//        MPHtmlPreferencesViewController.init()]
-//    let title:NSString =  NSLocalizedString("Preferences", comment: "Preferences window title.")
-//    return MASPreferencesWindowController(viewControllers: vcs, title:title)
-//}
+func initPreferencesWindowController() -> MASPreferencesWindowController
+{
+    let vcs:NSArray = [MPMarkdownPreferencesViewController.init(),
+        MPEditorPreferencesViewController.init(),
+        MPHtmlPreferencesViewController.init()]
+    let title:NSString =  NSLocalizedString("Preferences", comment: "Preferences window title.")
+    return MASPreferencesWindowController(viewControllers: vcs, title:title)
+}
 
 class MUSMainController : NSObject
 {
@@ -26,12 +26,10 @@ class MUSMainController : NSObject
     }
     }
 
-//check
-//    var preferencesWindowController:NSViewController
-
+    var preferencesWindowController:MASPreferencesWindowController!
 
     @IBAction func showPreferencesWindow(sender:AnyObject!) {
-//        preferencesWindowController.showWindow(nil)
+        preferencesWindowController.showWindow(nil)
     }
 
     @IBAction func showHelp(sender:AnyObject) {
@@ -51,7 +49,7 @@ class MUSMainController : NSObject
                 //check
                 let frame:NSRect = NSScreen.mainScreen().visibleFrame
 
-                for  wc in (document.windowControllers as NSWindowController[])
+                for  wc in (document.windowControllers as [NSWindowController])
                 {
                     wc.window.setFrame(frame, display:true)
                 }
@@ -63,15 +61,16 @@ class MUSMainController : NSObject
     {
         super.init()
 
-//        let vcs:NSArray = [MPMarkdownPreferencesViewController.init(),
-//            MPEditorPreferencesViewController.init(),
-//            MPHtmlPreferencesViewController.init()]
-//        let title:NSString =  NSLocalizedString("Preferences", comment: "Preferences window title.")
-//        preferencesWindowController = MASPreferencesWindowController(viewControllers: vcs, title:title)
+        let vcs:NSArray = [MPMarkdownPreferencesViewController(),
+            MPEditorPreferencesViewController(),
+            MPHtmlPreferencesViewController()]
+        let title =  NSLocalizedString("Preferences", comment: "Preferences window title.")
+        preferencesWindowController = MASPreferencesWindowController(viewControllers: vcs, title:title)
 
         let center:NSNotificationCenter = NSNotificationCenter.defaultCenter()
         center.addObserver(self, selector: "showFirstLaunchTips", name: MPDidDetectFreshInstallationNotification, object: nil)
         self.copyFiles()
+
 
     }
 

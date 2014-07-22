@@ -41,7 +41,7 @@ class MUSRenderer : NSObject
         let bundle = NSBundle.mainBundle()
         var urls = Array<NSURL>()
         urls.append(bundle.URLForResource("prism-core.min", withExtension: "js", subdirectory: kMUSPrismScriptDirectory))
-        currentLanguages.enumerateObjectsUsingBlock({(language: AnyObject!, index:Int, stop:CMutablePointer<ObjCBool>) in
+        currentLanguages.enumerateObjectsUsingBlock({(language: AnyObject!, index:Int, stop:UnsafePointer<ObjCBool>) in
             urls.extend(MUSPrismScriptURLsForLanguage(language as NSString))
             })
         return urls
@@ -83,7 +83,7 @@ class MUSRenderer : NSObject
     var parseDelayTimer:NSTimer?
     var extensions:Int!
     var smartypants:Bool!
-    var styleName:NSString!
+    var styleName:String!
     var mathjax:Bool!
     var syntaxHighlighting:Bool!
     var manualRender:Bool!

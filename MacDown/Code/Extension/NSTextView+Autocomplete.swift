@@ -8,7 +8,7 @@
 
 import Cocoa
 
-let kMUSMatchingCharactersMap:Character[][] = [
+let kMUSMatchingCharactersMap:[[Character]] = [
     ["(", ")"],
     ["[", "]"],
     ["[", "]"],
@@ -24,7 +24,7 @@ let kMUSMatchingCharactersMap:Character[][] = [
 
 let kMUSStrikethroughCharacter:Character = "~"
 
-let kMUSMarkupCharacters:Character[] = [
+let kMUSMarkupCharacters:[Character] = [
     "*", "_", "`", "=", "\0",]
 
 let kMUSListLineHeadPattern = "^(\\s*)((?:(?:\\*|\\+|-|)\\s+)?)((?:\\d+\\.\\s+)?)(\\S)?"
@@ -137,7 +137,7 @@ extension NSTextView
 
         let delims = NSCharacterSet.whitespaceAndNewlineCharacterSet()
 
-        for cs:Character[] in kMUSMatchingCharactersMap
+        for cs:[Character] in kMUSMatchingCharactersMap
         {
             if (delims.characterIsMember(n.toUnichar())
                 && (c == cs[0])
@@ -172,7 +172,7 @@ extension NSTextView
 
     func wrapMatchingCharactersOfCharacter(character:Character, aroundTextInRange range:NSRange, strikethroughEnabled:Bool) -> Bool
     {
-        for cs:Character[] in kMUSMatchingCharactersMap
+        for cs:[Character] in kMUSMatchingCharactersMap
         {
             if (character == cs[0])
             {
@@ -210,7 +210,7 @@ extension NSTextView
         let f:Character = string[location - 1]
         let b:Character = string[location]
 
-        for cs:Character[] in kMUSMatchingCharactersMap
+        for cs:[Character] in kMUSMatchingCharactersMap
         {
             if (f == cs[0] && b == cs[1])
             {

@@ -61,18 +61,16 @@ func MUSPrismScriptURLsForLanguage(language:NSString) -> Array<NSURL>
 }
 
 
-func MUSHTMLFromMarkdown(text:String, flags:CUnsignedInt, smartypants:Bool, renderer:CConstPointer<hoedown_renderer>) -> String
+func MUSHTMLFromMarkdown(text:String, flags:CUnsignedInt, smartypants:Bool, renderer:UnsafePointer<hoedown_renderer>) -> String
 {
-    let inputData:NSData = text.dataUsingEncoding(NSUTF8StringEncoding)
+    let inputData:NSData = text.dataUsingEncoding(NSUTF8StringEncoding)!
 
     var markdown = hoedown_markdown_new(flags, 15, renderer)
     var ob = hoedown_buffer_new(64)
     let size:size_t = inputData.length.asUnsigned()
-    var byteData = UInt8[]()
-    inputData.getBytes(&byteData)
+    var byteData =  UnsafePointer<UInt8>(inputData.bytes)
     //http://stackoverflow.com/questions/24303040/nsmutabledata-to-cconstpointer-conversion-in-swift-needed
     hoedown_markdown_render(ob, byteData, size, markdown)
-
 
     if (smartypants)
     {

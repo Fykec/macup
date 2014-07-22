@@ -31,11 +31,11 @@ extension String
 
     func substring(from: Int) -> String {
         let end = countElements(self)
-        return self[from..end]
+        return self[from..<end]
     }
     func substring(from: Int, length: Int) -> String {
         let end = from + length
-        return self[from..end]
+        return self[from..<end]
     }
 
     func NSRangeToRange(ocRange:NSRange) -> Range<String.Index>
