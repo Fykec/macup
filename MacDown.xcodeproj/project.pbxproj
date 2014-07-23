@@ -8,19 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		1F0D9D67194AC7CF008E1856 /* MPUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0D9D64194AC7CF008E1856 /* MPUtilities.m */; };
-		1F0D9D76194AC7F7008E1856 /* MPEditorPreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0D9D6A194AC7F7008E1856 /* MPEditorPreferencesViewController.m */; };
-		1F0D9D78194AC7F7008E1856 /* MPHtmlPreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0D9D6D194AC7F7008E1856 /* MPHtmlPreferencesViewController.m */; };
-		1F0D9D7A194AC7F7008E1856 /* MPMarkdownPreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0D9D70194AC7F7008E1856 /* MPMarkdownPreferencesViewController.m */; };
 		1F0D9D7C194AC7F7008E1856 /* MPPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0D9D73194AC7F7008E1856 /* MPPreferences.m */; };
-		1F0D9D7D194AC7F7008E1856 /* MPPreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0D9D75194AC7F7008E1856 /* MPPreferencesViewController.m */; };
 		1F0D9DAA194AC8CB008E1856 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 1F0D9DA6194AC8CB008E1856 /* Credits.rtf */; };
 		1F0D9DAB194AC8CB008E1856 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1F0D9DA8194AC8CB008E1856 /* InfoPlist.strings */; };
 		1F0D9DAD194AC8EF008E1856 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F0D9DAC194AC8EF008E1856 /* Images.xcassets */; };
 		1F0D9DAF194AC905008E1856 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0D9DAE194AC905008E1856 /* main.m */; };
 		1F0D9DB0194AC9EE008E1856 /* MUSDocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F0D9D83194AC83C008E1856 /* MUSDocument.xib */; };
-		1F0D9DB1194AC9EE008E1856 /* MPEditorPreferencesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F0D9D85194AC83C008E1856 /* MPEditorPreferencesViewController.xib */; };
-		1F0D9DB2194AC9EE008E1856 /* MPHtmlPreferencesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F0D9D87194AC83C008E1856 /* MPHtmlPreferencesViewController.xib */; };
-		1F0D9DB3194AC9EE008E1856 /* MPMarkdownPreferencesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F0D9D89194AC83C008E1856 /* MPMarkdownPreferencesViewController.xib */; };
+		1F0D9DB1194AC9EE008E1856 /* MUSEditorPreferencesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F0D9D85194AC83C008E1856 /* MUSEditorPreferencesViewController.xib */; };
+		1F0D9DB2194AC9EE008E1856 /* MUSHtmlPreferencesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F0D9D87194AC83C008E1856 /* MUSHtmlPreferencesViewController.xib */; };
+		1F0D9DB3194AC9EE008E1856 /* MUSMarkdownPreferencesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F0D9D89194AC83C008E1856 /* MUSMarkdownPreferencesViewController.xib */; };
 		1F0D9DB4194AC9EE008E1856 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F0D9D81194AC83C008E1856 /* MainMenu.xib */; };
 		1F3A47521953E84700293259 /* help.md in Resources */ = {isa = PBXBuildFile; fileRef = 1F3A47511953E84700293259 /* help.md */; };
 		1F4C8E9A194AE0B9004BF82E /* MarkdownDocument.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1F4C8E99194AE0B9004BF82E /* MarkdownDocument.icns */; };
@@ -52,6 +48,10 @@
 		2C9C5D5E196152350098CBAC /* MUSMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9C5D5D196152350098CBAC /* MUSMainController.swift */; };
 		2C9C5D60196155220098CBAC /* MUSExportPanelAccessoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9C5D5F196155220098CBAC /* MUSExportPanelAccessoryViewController.swift */; };
 		2C9C5D6219615D850098CBAC /* MUSDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9C5D6119615D850098CBAC /* MUSDocument.swift */; };
+		2CA060C3197F8C8500112168 /* MUSPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA060C2197F8C8500112168 /* MUSPreferencesViewController.swift */; };
+		2CA060C5197F8E0B00112168 /* MUSMarkdownPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA060C4197F8E0B00112168 /* MUSMarkdownPreferencesViewController.swift */; };
+		2CA060C7197F98BB00112168 /* MUSEditorPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA060C6197F98BB00112168 /* MUSEditorPreferencesViewController.swift */; };
+		2CA060C9197FA14800112168 /* MUSHtmlPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA060C8197FA14800112168 /* MUSHtmlPreferencesViewController.swift */; };
 		2CBBCB561966D1D000907DDA /* MUSHoedownHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBBCB551966D1D000907DDA /* MUSHoedownHelper.m */; };
 		5318159056384894AA42DB4F /* libPods-MacDownTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AEAF42BBDCEC4012B5092BB3 /* libPods-MacDownTests.a */; };
 		B49728377A904875B2963C38 /* libPods-MacDown.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C5C1FBBB3ED456285901D31 /* libPods-MacDown.a */; };
@@ -77,21 +77,13 @@
 /* Begin PBXFileReference section */
 		1F0D9D63194AC7CF008E1856 /* MPUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPUtilities.h; sourceTree = "<group>"; };
 		1F0D9D64194AC7CF008E1856 /* MPUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPUtilities.m; sourceTree = "<group>"; };
-		1F0D9D69194AC7F7008E1856 /* MPEditorPreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPEditorPreferencesViewController.h; sourceTree = "<group>"; };
-		1F0D9D6A194AC7F7008E1856 /* MPEditorPreferencesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPEditorPreferencesViewController.m; sourceTree = "<group>"; };
-		1F0D9D6C194AC7F7008E1856 /* MPHtmlPreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPHtmlPreferencesViewController.h; sourceTree = "<group>"; };
-		1F0D9D6D194AC7F7008E1856 /* MPHtmlPreferencesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPHtmlPreferencesViewController.m; sourceTree = "<group>"; };
-		1F0D9D6F194AC7F7008E1856 /* MPMarkdownPreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPMarkdownPreferencesViewController.h; sourceTree = "<group>"; };
-		1F0D9D70194AC7F7008E1856 /* MPMarkdownPreferencesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPMarkdownPreferencesViewController.m; sourceTree = "<group>"; };
 		1F0D9D72194AC7F7008E1856 /* MPPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPPreferences.h; sourceTree = "<group>"; };
 		1F0D9D73194AC7F7008E1856 /* MPPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPPreferences.m; sourceTree = "<group>"; };
-		1F0D9D74194AC7F7008E1856 /* MPPreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPPreferencesViewController.h; sourceTree = "<group>"; };
-		1F0D9D75194AC7F7008E1856 /* MPPreferencesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPPreferencesViewController.m; sourceTree = "<group>"; };
 		1F0D9D82194AC83C008E1856 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Localization/Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		1F0D9D84194AC83C008E1856 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Localization/Base.lproj/MUSDocument.xib; sourceTree = "<group>"; };
-		1F0D9D86194AC83C008E1856 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Localization/Base.lproj/MPEditorPreferencesViewController.xib; sourceTree = "<group>"; };
-		1F0D9D88194AC83C008E1856 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Localization/Base.lproj/MPHtmlPreferencesViewController.xib; sourceTree = "<group>"; };
-		1F0D9D8A194AC83C008E1856 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Localization/Base.lproj/MPMarkdownPreferencesViewController.xib; sourceTree = "<group>"; };
+		1F0D9D86194AC83C008E1856 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Localization/Base.lproj/MUSEditorPreferencesViewController.xib; sourceTree = "<group>"; };
+		1F0D9D88194AC83C008E1856 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Localization/Base.lproj/MUSHtmlPreferencesViewController.xib; sourceTree = "<group>"; };
+		1F0D9D8A194AC83C008E1856 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Localization/Base.lproj/MUSMarkdownPreferencesViewController.xib; sourceTree = "<group>"; };
 		1F0D9DA3194AC8B3008E1856 /* MacDown-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "MacDown-Info.plist"; sourceTree = "<group>"; };
 		1F0D9DA7194AC8CB008E1856 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = Localization/en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		1F0D9DA9194AC8CB008E1856 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localization/en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -143,6 +135,10 @@
 		2C9C5D5D196152350098CBAC /* MUSMainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUSMainController.swift; sourceTree = "<group>"; };
 		2C9C5D5F196155220098CBAC /* MUSExportPanelAccessoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUSExportPanelAccessoryViewController.swift; sourceTree = "<group>"; };
 		2C9C5D6119615D850098CBAC /* MUSDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUSDocument.swift; sourceTree = "<group>"; };
+		2CA060C2197F8C8500112168 /* MUSPreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUSPreferencesViewController.swift; sourceTree = "<group>"; };
+		2CA060C4197F8E0B00112168 /* MUSMarkdownPreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUSMarkdownPreferencesViewController.swift; sourceTree = "<group>"; };
+		2CA060C6197F98BB00112168 /* MUSEditorPreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUSEditorPreferencesViewController.swift; sourceTree = "<group>"; };
+		2CA060C8197FA14800112168 /* MUSHtmlPreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUSHtmlPreferencesViewController.swift; sourceTree = "<group>"; };
 		2CBBCB541966D1D000907DDA /* MUSHoedownHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUSHoedownHelper.h; sourceTree = "<group>"; };
 		2CBBCB551966D1D000907DDA /* MUSHoedownHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUSHoedownHelper.m; sourceTree = "<group>"; };
 		7C5C1FBBB3ED456285901D31 /* libPods-MacDown.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MacDown.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -203,17 +199,13 @@
 		1F0D9D68194AC7F7008E1856 /* Preferences */ = {
 			isa = PBXGroup;
 			children = (
-				1F0D9D74194AC7F7008E1856 /* MPPreferencesViewController.h */,
-				1F0D9D75194AC7F7008E1856 /* MPPreferencesViewController.m */,
-				1F0D9D6F194AC7F7008E1856 /* MPMarkdownPreferencesViewController.h */,
-				1F0D9D70194AC7F7008E1856 /* MPMarkdownPreferencesViewController.m */,
-				1F0D9D89194AC83C008E1856 /* MPMarkdownPreferencesViewController.xib */,
-				1F0D9D69194AC7F7008E1856 /* MPEditorPreferencesViewController.h */,
-				1F0D9D6A194AC7F7008E1856 /* MPEditorPreferencesViewController.m */,
-				1F0D9D85194AC83C008E1856 /* MPEditorPreferencesViewController.xib */,
-				1F0D9D6C194AC7F7008E1856 /* MPHtmlPreferencesViewController.h */,
-				1F0D9D6D194AC7F7008E1856 /* MPHtmlPreferencesViewController.m */,
-				1F0D9D87194AC83C008E1856 /* MPHtmlPreferencesViewController.xib */,
+				2CA060C2197F8C8500112168 /* MUSPreferencesViewController.swift */,
+				2CA060C4197F8E0B00112168 /* MUSMarkdownPreferencesViewController.swift */,
+				1F0D9D89194AC83C008E1856 /* MUSMarkdownPreferencesViewController.xib */,
+				2CA060C6197F98BB00112168 /* MUSEditorPreferencesViewController.swift */,
+				1F0D9D85194AC83C008E1856 /* MUSEditorPreferencesViewController.xib */,
+				2CA060C8197FA14800112168 /* MUSHtmlPreferencesViewController.swift */,
+				1F0D9D87194AC83C008E1856 /* MUSHtmlPreferencesViewController.xib */,
 				1F0D9D72194AC7F7008E1856 /* MPPreferences.h */,
 				1F0D9D73194AC7F7008E1856 /* MPPreferences.m */,
 			);
@@ -487,10 +479,10 @@
 				1F8A82D919533E9300B6BF69 /* Prism in Resources */,
 				1F9A14EF194EEEDD00D1C6A9 /* Styles in Resources */,
 				1F0D9DB0194AC9EE008E1856 /* MUSDocument.xib in Resources */,
-				1F0D9DB1194AC9EE008E1856 /* MPEditorPreferencesViewController.xib in Resources */,
+				1F0D9DB1194AC9EE008E1856 /* MUSEditorPreferencesViewController.xib in Resources */,
 				1F9A14F4194EF6A600D1C6A9 /* Themes in Resources */,
-				1F0D9DB2194AC9EE008E1856 /* MPHtmlPreferencesViewController.xib in Resources */,
-				1F0D9DB3194AC9EE008E1856 /* MPMarkdownPreferencesViewController.xib in Resources */,
+				1F0D9DB2194AC9EE008E1856 /* MUSHtmlPreferencesViewController.xib in Resources */,
+				1F0D9DB3194AC9EE008E1856 /* MUSMarkdownPreferencesViewController.xib in Resources */,
 				1F3A47521953E84700293259 /* help.md in Resources */,
 				1F0D9DB4194AC9EE008E1856 /* MainMenu.xib in Resources */,
 				1FBBD4BE194C952300BB3C88 /* MPExportPanelAccessoryViewController.xib in Resources */,
@@ -597,24 +589,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C9C5D6219615D850098CBAC /* MUSDocument.swift in Sources */,
-				1F0D9D7A194AC7F7008E1856 /* MPMarkdownPreferencesViewController.m in Sources */,
 				2C93B80F19625AD200F06F44 /* String+Lookup.swift in Sources */,
-				1F0D9D7D194AC7F7008E1856 /* MPPreferencesViewController.m in Sources */,
+				2CA060C5197F8E0B00112168 /* MUSMarkdownPreferencesViewController.swift in Sources */,
 				1F8A835E1953454F00B6BF69 /* HGMarkdownHighlightingStyle.m in Sources */,
 				2CBBCB561966D1D000907DDA /* MUSHoedownHelper.m in Sources */,
 				1F0D9D67194AC7CF008E1856 /* MPUtilities.m in Sources */,
-				1F0D9D78194AC7F7008E1856 /* MPHtmlPreferencesViewController.m in Sources */,
+				2CA060C9197FA14800112168 /* MUSHtmlPreferencesViewController.swift in Sources */,
 				2C1F58B019654CB400DD951C /* MUSRenderer.swift in Sources */,
 				1F0D9D7C194AC7F7008E1856 /* MPPreferences.m in Sources */,
 				1F0D9DAF194AC905008E1856 /* main.m in Sources */,
+				2CA060C7197F98BB00112168 /* MUSEditorPreferencesViewController.swift in Sources */,
 				2C9C5D5E196152350098CBAC /* MUSMainController.swift in Sources */,
 				1FBBD4CB194CA36500BB3C88 /* hoedown_html_patch.c in Sources */,
 				1F8A8364195346B200B6BF69 /* pmh_styleparser.c in Sources */,
 				2C1E2B43196BFBA7000A547D /* Character+unichar.swift in Sources */,
-				1F0D9D76194AC7F7008E1856 /* MPEditorPreferencesViewController.m in Sources */,
 				2C1F58B21965518C00DD951C /* MUSHoedown.swift in Sources */,
 				2C9C5D60196155220098CBAC /* MUSExportPanelAccessoryViewController.swift in Sources */,
 				1F8A83621953461800B6BF69 /* pmh_parser.c in Sources */,
+				2CA060C3197F8C8500112168 /* MUSPreferencesViewController.swift in Sources */,
 				1F8A835D1953454F00B6BF69 /* HGMarkdownHighlighter.m in Sources */,
 				2C4A4BD6196BDFD900EC9482 /* NSTextView+Autocomplete.swift in Sources */,
 				2C0CD0D81965447E00111223 /* MUSPreviewWebView.m in Sources */,
@@ -663,30 +655,30 @@
 			path = ../..;
 			sourceTree = "<group>";
 		};
-		1F0D9D85194AC83C008E1856 /* MPEditorPreferencesViewController.xib */ = {
+		1F0D9D85194AC83C008E1856 /* MUSEditorPreferencesViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				1F0D9D86194AC83C008E1856 /* Base */,
 			);
-			name = MPEditorPreferencesViewController.xib;
+			name = MUSEditorPreferencesViewController.xib;
 			path = ../..;
 			sourceTree = "<group>";
 		};
-		1F0D9D87194AC83C008E1856 /* MPHtmlPreferencesViewController.xib */ = {
+		1F0D9D87194AC83C008E1856 /* MUSHtmlPreferencesViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				1F0D9D88194AC83C008E1856 /* Base */,
 			);
-			name = MPHtmlPreferencesViewController.xib;
+			name = MUSHtmlPreferencesViewController.xib;
 			path = ../..;
 			sourceTree = "<group>";
 		};
-		1F0D9D89194AC83C008E1856 /* MPMarkdownPreferencesViewController.xib */ = {
+		1F0D9D89194AC83C008E1856 /* MUSMarkdownPreferencesViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				1F0D9D8A194AC83C008E1856 /* Base */,
 			);
-			name = MPMarkdownPreferencesViewController.xib;
+			name = MUSMarkdownPreferencesViewController.xib;
 			path = ../..;
 			sourceTree = "<group>";
 		};

@@ -796,8 +796,12 @@ class MUSDocument : NSDocument, MUSRendererDataSource, MUSRendererDelegate, MUSP
                 })
         }
 
-        let contentView = self.editor.enclosingScrollView.contentView
-        contentView.postsBoundsChangedNotifications = true
+        let contentView = self.editor.enclosingScrollView?.contentView
+        if (contentView)
+        {
+
+            contentView!.postsBoundsChangedNotifications = true
+        }
 
         self.highlighter.activate()
     }

@@ -4,9 +4,6 @@
 
 #import <Cocoa/Cocoa.h>
 #import <MASPreferencesWindowController.h>
-#import "MPMarkdownPreferencesViewController.h"
-#import "MPEditorPreferencesViewController.h"
-#import "MPHtmlPreferencesViewController.h"
 #import "MPPreferences.h"
 #import "MPUtilities.h"
 #import <WebKit/WebKit.h>
