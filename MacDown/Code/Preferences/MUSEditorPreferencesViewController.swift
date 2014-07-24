@@ -10,12 +10,17 @@ import Foundation
 
 class MUSEditorPreferencesViewController : MUSPreferencesViewController, MASPreferencesViewController, NSTextFieldDelegate
 {
-    @IBOutlet var fontPreviewField:NSTextField
+    @IBOutlet var fontPreviewField:NSTextField!
 
-    @IBOutlet var themeSelect:NSPopUpButton
+    @IBOutlet var themeSelect:NSPopUpButton!
 
-    @IBOutlet var themeFunctions:NSSegmentedControl
+    @IBOutlet var themeFunctions:NSSegmentedControl!
 
+
+    init()
+    {
+        super.init()
+    }
     
     override var identifier:String! {
     get {

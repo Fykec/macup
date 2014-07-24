@@ -38,6 +38,16 @@ extension String
         return self[from..<end]
     }
 
+    func substringToIndex(idx:Int) -> String!
+    {
+        return self.substringToIndex(advance(self.startIndex, idx))
+    }
+
+    func substringFromIndex(idx:Int) -> String!
+    {
+        return self.substringFromIndex(advance(self.startIndex, idx))
+    }
+
     func NSRangeToRange(ocRange:NSRange) -> Range<String.Index>
     {
         let startIndex = advance(self.startIndex, ocRange.location)

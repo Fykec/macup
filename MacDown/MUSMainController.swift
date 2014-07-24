@@ -10,9 +10,9 @@ import Foundation
 
 func initPreferencesWindowController() -> MASPreferencesWindowController
 {
-    let vcs:NSArray = [MUSMarkdownPreferencesViewController.init(),
-        MUSEditorPreferencesViewController.init(),
-        MUSHtmlPreferencesViewController.init()]
+    let vcs:NSArray = [MUSMarkdownPreferencesViewController(),
+        MUSEditorPreferencesViewController(),
+        MUSHtmlPreferencesViewController()]
     let title:NSString =  NSLocalizedString("Preferences", comment: "Preferences window title.")
     return MASPreferencesWindowController(viewControllers: vcs, title:title)
 }

@@ -18,6 +18,11 @@ class MUSMarkdownPreferencesViewController : MUSPreferencesViewController, MASPr
 //    var toolbarItemImage: NSImage! = NSImage(named: "MarkdownPreferences")
 //    var toolbarItemLabel: NSString! =  NSLocalizedString("Markdown", comment: "Preference pane title.")
 
+    init()
+    {
+        super.init()
+    }
+    
     override var identifier:String! {
     get {
         return "MarkdownPreferences"

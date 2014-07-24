@@ -318,9 +318,9 @@ class MUSDocument : NSDocument, MUSRendererDataSource, MUSRendererDelegate, MUSP
 {
     let preferences:MPPreferences = MPPreferences.sharedInstance()
 
-    @IBOutlet weak var splitView:NSSplitView
+    @IBOutlet weak var splitView:NSSplitView!
     var editor:MUSTextView!
-    @IBOutlet weak var preview:MUSPreviewWebView
+    @IBOutlet weak var preview:MUSPreviewWebView!
     var highlighter:HGMarkdownHighlighter!
     var renderer:MUSRenderer!
     var manualRender:Bool?
@@ -453,17 +453,17 @@ class MUSDocument : NSDocument, MUSRendererDataSource, MUSRendererDelegate, MUSP
 
     func rendererHTMLTitle(renderer: MUSRenderer!) -> String!
     {
-        var name = self.fileURL?.lastPathComponent
+        var name:String? = self.fileURL?.lastPathComponent
 
         if (name)
         {
             if (name!.hasSuffix(".md"))
             {
-                name = name!.substringToIndex(-3)
+                name = name!.substringToIndex(advance(name!.startIndex, -3))
             }
             else if (name!.hasSuffix(".markdown"))
             {
-                name = name!.substringToIndex(-9)
+                name = name!.substringToIndex(advance(name!.startIndex, -9))
             }
 
             if (name)
@@ -572,7 +572,8 @@ class MUSDocument : NSDocument, MUSRendererDataSource, MUSRendererDelegate, MUSP
             var fileName = self.fileURL.lastPathComponent
             if (fileName.hasSuffix(".md"))
             {
-                fileName = fileName.substringToIndex(-3)
+                //http://stackoverflow.com/questions/24880604/type-string-index-does-not-conform-protocol-integerliteralconvertible
+                fileName = fileName.substringToIndex(advance(fileName.startIndex, -3))
             }
             panel.nameFieldStringValue = fileName
         }
@@ -819,11 +820,12 @@ class MUSDocument : NSDocument, MUSRendererDataSource, MUSRendererDelegate, MUSP
         let editorDocumentFrame = editorDocumentView.frame
         let editorContentBounds = editorContentView.bounds
 
-        var ratio = 0.0
+        var ratio:CGFloat = 0.0
 
         if (editorDocumentFrame.size.height > editorContentBounds.size.height)
         {
             ratio = editorContentBounds.origin.y / (editorDocumentFrame.size.height - editorContentBounds.size.height)
+
         }
 
         let previewScrollView = self.preview.mainFrame.frameView.documentView.enclosingScrollView

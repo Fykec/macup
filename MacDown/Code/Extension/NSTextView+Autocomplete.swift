@@ -15,11 +15,11 @@ let kMUSMatchingCharactersMap:[[Character]] = [
     ["<", ">"],
     ["\"", "\""],
     ["\"", "\""],
-    ["\uff08", "\uff09"],     // full-width parentheses
-    ["\u300c", "\u300d"],     // corner brackets
-    ["\u300e", "\u300f"],     // white corner brackets
-    ["\u2018", "\u2019"],     // single quotes
-    ["\u201c", "\u201d"],     // double quotes
+    ["\u{ff08}", "\u{ff09}"],
+    ["\u{300c}", "\u{300d}"],     // corner brackets
+    ["\u{300e}", "\u{300f}"],     // white corner brackets
+    ["\u{2018}", "\u{2019}"],     // single quotes
+    ["\u{201c}", "\u{201d}"],     // double quotes
     ["\0", "\0"],]
 
 let kMUSStrikethroughCharacter:Character = "~"

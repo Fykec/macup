@@ -13,11 +13,18 @@ class MUSHtmlPreferencesViewController : MUSPreferencesViewController, MASPrefer
 {
     let MUSPrismDefaultThemeName = NSLocalizedString("(Default)", comment: "Prism theme title")
 
-    @IBOutlet var stylesheetSelect:NSPopUpButton
+    @IBOutlet var stylesheetSelect:NSPopUpButton!
 
-    @IBOutlet var stylesheetFunctions:NSSegmentedControl
+    @IBOutlet var stylesheetFunctions:NSSegmentedControl!
 
-    @IBOutlet var highlightingThemeSelect:NSPopUpButton
+    @IBOutlet var highlightingThemeSelect:NSPopUpButton!
+
+
+    init()
+    {
+        super.init()
+    }
+
 
     override var identifier:String! {
     get {
