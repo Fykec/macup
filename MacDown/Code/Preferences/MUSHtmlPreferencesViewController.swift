@@ -93,7 +93,7 @@ class MUSHtmlPreferencesViewController : MUSPreferencesViewController, MASPrefer
         switch ((sender as NSSegmentedControl).selectedSegment)
             {
         case 0:
-            let dirPath = MPDataDirectory(kMPStylesDirectoryName)
+            let dirPath = MUSDataDirectory(kMUSStylesDirectoryName)
             let url = NSURL.fileURLWithPath(dirPath)
             NSWorkspace.sharedWorkspace().activateFileViewerSelectingURLs([url])
 
@@ -112,7 +112,7 @@ class MUSHtmlPreferencesViewController : MUSPreferencesViewController, MASPrefer
         stylesheetSelect.enabled = false
         self.stylesheetSelect.removeAllItems()
 
-        let itemTitles = MPListEntriesForDirectory(kMPStylesDirectoryName, MPFileNameHasSuffixProcessor(kMPStyleFileExtension))
+        let itemTitles = MUSListEntriesForDirectory(kMUSStylesDirectoryName, MUSFileNameHasSuffixProcessor(kMUSStyleFileExtension))
 
         stylesheetSelect.addItemWithTitle("")
         stylesheetSelect.addItemsWithTitles(itemTitles)

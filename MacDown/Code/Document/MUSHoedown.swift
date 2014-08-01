@@ -108,7 +108,7 @@ func MUSGetHTML( title:String?, body:String!,  stylesrc:Array<NSURL>,  styleopt:
             case MUSAssetsOption.FullLink:
                 s = NSString(format: "<link rel=\"stylesheet\" type=\"text/css\" href=\"%@\">", url.absoluteString)
             case MUSAssetsOption.Embedded:
-                s = NSString(format: "<style>\n%@\n</style>", MPReadFileOfPath(url.path))
+                s = NSString(format: "<style>\n%@\n</style>", MUSReadFileOfPath(url.path))
             default:
                 s = ""
             }
@@ -138,7 +138,7 @@ func MUSGetHTML( title:String?, body:String!,  stylesrc:Array<NSURL>,  styleopt:
             case MUSAssetsOption.FullLink:
                 s = NSString(format: "<script type=\"text/javascript\" src=\"%@\"></script>", url.absoluteString)
             case MUSAssetsOption.Embedded:
-                s = NSString(format: "<script type=\"text/javascript\">%@</script>", MPReadFileOfPath(url.path))
+                s = NSString(format: "<script type=\"text/javascript\">%@</script>", MUSReadFileOfPath(url.path))
             default:
                 s = ""
             }

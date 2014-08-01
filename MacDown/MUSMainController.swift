@@ -77,7 +77,7 @@ class MUSMainController : NSObject
     func copyFiles()
     {
         let manager:NSFileManager = NSFileManager.defaultManager()
-        let root:NSString = MPDataDirectory(nil)
+        let root:NSString = MUSDataDirectory(nil)
         if (manager.fileExistsAtPath(root))
         {
             return
@@ -86,13 +86,13 @@ class MUSMainController : NSObject
         manager.createDirectoryAtPath(root
             , withIntermediateDirectories: true, attributes: nil, error: nil)
         let bundle:NSBundle = NSBundle.mainBundle()
-        var target:NSURL = NSURL.fileURLWithPath(MPDataDirectory(kMPStylesDirectoryName))
+        var target:NSURL = NSURL.fileURLWithPath(MUSDataDirectory(kMUSStylesDirectoryName))
         if (!manager.fileExistsAtPath(target.path))
         {
             let source:NSURL = bundle.URLForResource("Styles", withExtension: "")
             manager.copyItemAtURL(source, toURL: target, error: nil)
         }
-        target = NSURL.fileURLWithPath(MPDataDirectory(kMPThemesDirectoryName))
+        target = NSURL.fileURLWithPath(MUSDataDirectory(kMUSThemesDirectoryName))
         if (!manager.fileExistsAtPath(target.path))
         {
             let source:NSURL = bundle.URLForResource("Themes", withExtension: "")

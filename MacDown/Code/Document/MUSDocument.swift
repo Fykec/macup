@@ -789,7 +789,7 @@ class MUSDocument : NSDocument, MUSRendererDataSource, MUSRendererDelegate, MUSP
         if (themeName.length > 0)
         {
             let path = MPThemePathForName(themeName)
-            let themeString = MPReadFileOfPath(path)
+            let themeString = MUSReadFileOfPath(path)
 
             self.highlighter.applyStylesFromStylesheet(themeString, withErrorHandler: {
                 (errorMessages:[AnyObject]!) in

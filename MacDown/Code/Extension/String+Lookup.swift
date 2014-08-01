@@ -107,7 +107,7 @@ extension String
         }
         var p = loc - 1
 
-        while (p >= 0 && !MPCharacterIsNewline(string.characterAtIndex(p)))
+        while (p >= 0 && !MUSCharacterIsNewline(string.characterAtIndex(p)))
         {
             p--
         }
@@ -124,7 +124,7 @@ extension String
             return length
         }
         var p = location + 1
-        while (p < length && !MPCharacterIsNewline(string.characterAtIndex(p)))
+        while (p < length && !MUSCharacterIsNewline(string.characterAtIndex(p)))
         {
             p++
         }
@@ -145,7 +145,7 @@ extension String
         {
             loc = length
         }
-        while (p < loc && MPCharacterIsWhitespace(string.characterAtIndex(p)))
+        while (p < loc && MUSCharacterIsWhitespace(string.characterAtIndex(p)))
         {
             p++
         }
@@ -170,7 +170,7 @@ extension String
         {
             end = string.lengthOfUTF8() - 2
         }
-        if (!MPCharacterIsNewline((string[end]).toUnichar()))
+        if (!MUSCharacterIsNewline((string[end]).toUnichar()))
         {
             end = string.locationOfFirstNonWhitespaceCharacterInLineBefore(end)
         }

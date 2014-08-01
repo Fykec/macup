@@ -35,7 +35,7 @@ class MUSRenderer : NSObject
     {
     get {
         let name = self.delegate!.rendererHighlightingThemeName(self)
-        return [MPHighlightingThemeURLForName(name)]
+        return [MUSHighlightingThemeURLForName(name)]
     }
     }
 

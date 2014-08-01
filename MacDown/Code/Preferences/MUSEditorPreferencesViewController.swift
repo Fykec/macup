@@ -67,7 +67,7 @@ class MUSEditorPreferencesViewController : MUSPreferencesViewController, MASPref
         themeSelect.enabled = false
         themeSelect.removeAllItems()
 
-        let itemTitles = MPListEntriesForDirectory(kMPThemesDirectoryName, MPFileNameHasSuffixProcessor(kMPThemeFileExtension))
+        let itemTitles = MUSListEntriesForDirectory(kMUSThemesDirectoryName, MUSFileNameHasSuffixProcessor(kMUSThemeFileExtension))
 
         themeSelect.addItemWithTitle("")
         themeSelect.addItemsWithTitles(itemTitles)
@@ -129,7 +129,7 @@ class MUSEditorPreferencesViewController : MUSPreferencesViewController, MASPref
         switch ((sender as NSSegmentedControl).selectedSegment)
             {
         case 0:
-                let dirPath = MPDataDirectory(kMPThemesDirectoryName)
+                let dirPath = MUSDataDirectory(kMUSThemesDirectoryName)
                 let url = NSURL.fileURLWithPath(dirPath)
                 NSWorkspace.sharedWorkspace().activateFileViewerSelectingURLs([url])
 

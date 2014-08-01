@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1F0D9D67194AC7CF008E1856 /* MPUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0D9D64194AC7CF008E1856 /* MPUtilities.m */; };
 		1F0D9D7C194AC7F7008E1856 /* MPPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0D9D73194AC7F7008E1856 /* MPPreferences.m */; };
 		1F0D9DAA194AC8CB008E1856 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 1F0D9DA6194AC8CB008E1856 /* Credits.rtf */; };
 		1F0D9DAB194AC8CB008E1856 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1F0D9DA8194AC8CB008E1856 /* InfoPlist.strings */; };
@@ -43,6 +42,8 @@
 		2C1E2B43196BFBA7000A547D /* Character+unichar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1E2B42196BFBA7000A547D /* Character+unichar.swift */; };
 		2C1F58B019654CB400DD951C /* MUSRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1F58AF19654CB400DD951C /* MUSRenderer.swift */; };
 		2C1F58B21965518C00DD951C /* MUSHoedown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1F58B11965518C00DD951C /* MUSHoedown.swift */; };
+		2C2AE0DE1980EA6C00069F25 /* MUSPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2AE0DD1980EA6C00069F25 /* MUSPreferences.swift */; };
+		2C44F9DC198B6CB2007F994E /* MUSUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C44F9DB198B6CB2007F994E /* MUSUtilities.swift */; };
 		2C4A4BD6196BDFD900EC9482 /* NSTextView+Autocomplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4A4BD5196BDFD900EC9482 /* NSTextView+Autocomplete.swift */; };
 		2C93B80F19625AD200F06F44 /* String+Lookup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C93B80E19625AD200F06F44 /* String+Lookup.swift */; };
 		2C9C5D5E196152350098CBAC /* MUSMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9C5D5D196152350098CBAC /* MUSMainController.swift */; };
@@ -75,8 +76,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1F0D9D63194AC7CF008E1856 /* MPUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPUtilities.h; sourceTree = "<group>"; };
-		1F0D9D64194AC7CF008E1856 /* MPUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPUtilities.m; sourceTree = "<group>"; };
 		1F0D9D72194AC7F7008E1856 /* MPPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPPreferences.h; sourceTree = "<group>"; };
 		1F0D9D73194AC7F7008E1856 /* MPPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPPreferences.m; sourceTree = "<group>"; };
 		1F0D9D82194AC83C008E1856 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Localization/Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
@@ -129,6 +128,8 @@
 		2C1E2B42196BFBA7000A547D /* Character+unichar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Character+unichar.swift"; sourceTree = "<group>"; };
 		2C1F58AF19654CB400DD951C /* MUSRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUSRenderer.swift; sourceTree = "<group>"; };
 		2C1F58B11965518C00DD951C /* MUSHoedown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUSHoedown.swift; sourceTree = "<group>"; };
+		2C2AE0DD1980EA6C00069F25 /* MUSPreferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUSPreferences.swift; sourceTree = "<group>"; };
+		2C44F9DB198B6CB2007F994E /* MUSUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUSUtilities.swift; sourceTree = "<group>"; };
 		2C4A4BD5196BDFD900EC9482 /* NSTextView+Autocomplete.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSTextView+Autocomplete.swift"; sourceTree = "<group>"; };
 		2C93B80E19625AD200F06F44 /* String+Lookup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Lookup.swift"; sourceTree = "<group>"; };
 		2C9C5D5C196152340098CBAC /* MacDown-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MacDown-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -189,8 +190,7 @@
 		1F0D9D62194AC7CF008E1856 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				1F0D9D63194AC7CF008E1856 /* MPUtilities.h */,
-				1F0D9D64194AC7CF008E1856 /* MPUtilities.m */,
+				2C44F9DB198B6CB2007F994E /* MUSUtilities.swift */,
 			);
 			name = Utility;
 			path = Code/Utility;
@@ -208,6 +208,7 @@
 				1F0D9D87194AC83C008E1856 /* MUSHtmlPreferencesViewController.xib */,
 				1F0D9D72194AC7F7008E1856 /* MPPreferences.h */,
 				1F0D9D73194AC7F7008E1856 /* MPPreferences.m */,
+				2C2AE0DD1980EA6C00069F25 /* MUSPreferences.swift */,
 			);
 			name = Preferences;
 			path = Code/Preferences;
@@ -593,7 +594,7 @@
 				2CA060C5197F8E0B00112168 /* MUSMarkdownPreferencesViewController.swift in Sources */,
 				1F8A835E1953454F00B6BF69 /* HGMarkdownHighlightingStyle.m in Sources */,
 				2CBBCB561966D1D000907DDA /* MUSHoedownHelper.m in Sources */,
-				1F0D9D67194AC7CF008E1856 /* MPUtilities.m in Sources */,
+				2C2AE0DE1980EA6C00069F25 /* MUSPreferences.swift in Sources */,
 				2CA060C9197FA14800112168 /* MUSHtmlPreferencesViewController.swift in Sources */,
 				2C1F58B019654CB400DD951C /* MUSRenderer.swift in Sources */,
 				1F0D9D7C194AC7F7008E1856 /* MPPreferences.m in Sources */,
@@ -609,6 +610,7 @@
 				2CA060C3197F8C8500112168 /* MUSPreferencesViewController.swift in Sources */,
 				1F8A835D1953454F00B6BF69 /* HGMarkdownHighlighter.m in Sources */,
 				2C4A4BD6196BDFD900EC9482 /* NSTextView+Autocomplete.swift in Sources */,
+				2C44F9DC198B6CB2007F994E /* MUSUtilities.swift in Sources */,
 				2C0CD0D81965447E00111223 /* MUSPreviewWebView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
