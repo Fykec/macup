@@ -29,6 +29,10 @@ class MUSMainController : NSObject
     var preferencesWindowController:MASPreferencesWindowController!
 
     @IBAction func showPreferencesWindow(sender:AnyObject!) {
+        if (!preferencesWindowController)
+        {
+            preferencesWindowController = initPreferencesWindowController()
+        }
         preferencesWindowController.showWindow(nil)
     }
 

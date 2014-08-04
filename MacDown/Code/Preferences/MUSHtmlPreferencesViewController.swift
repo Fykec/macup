@@ -20,9 +20,14 @@ class MUSHtmlPreferencesViewController : MUSPreferencesViewController, MASPrefer
     @IBOutlet var highlightingThemeSelect:NSPopUpButton!
 
 
-    init()
+    convenience init()
     {
-        super.init()
+        self.init(nibName:"MUSHtmlPreferencesViewController", bundle:nil)
+    }
+
+    init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!)
+    {
+        super.init(nibName:"MUSHtmlPreferencesViewController", bundle:nil)
     }
 
 

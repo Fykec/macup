@@ -576,7 +576,7 @@ class MUSDocument : NSDocument, MUSRendererDataSource, MUSRendererDelegate, MUSP
             if (fileName.hasSuffix(".md"))
             {
                 //http://stackoverflow.com/questions/24880604/type-string-index-does-not-conform-protocol-integerliteralconvertible
-                fileName = fileName.substringToIndex(advance(fileName.startIndex, -3))
+                fileName = fileName.substringToIndex(advance(fileName.startIndex, fileName.lengthOfUTF8() - 3))
             }
             panel.nameFieldStringValue = fileName
         }

@@ -25,7 +25,7 @@ class MUSExportPanelAccessoryViewController : NSViewController {
 
     init()
     {
-        super.init(nibName:self.className, bundle:nil)
+        super.init(nibName:"MUSExportPanelAccessoryViewController", bundle:nil)
         
     }
 }

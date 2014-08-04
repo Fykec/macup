@@ -12,9 +12,9 @@ class MUSPreferencesViewController : NSViewController
 {
     let preferences:MUSPreferences = MUSPreferences.sharedInstance()
     
-    init()
-    {
-        super.init(nibName:self.className, bundle:nil)
-
-    }
+//    init()
+//    {
+//        super.init(nibName:self.className, bundle:nil)
+//
+//    }
 }

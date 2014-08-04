@@ -16,10 +16,14 @@ class MUSEditorPreferencesViewController : MUSPreferencesViewController, MASPref
 
     @IBOutlet var themeFunctions:NSSegmentedControl!
 
-
-    init()
+    convenience init()
     {
-        super.init()
+        self.init(nibName:"MUSEditorPreferencesViewController", bundle:nil)
+    }
+
+    init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!)
+    {
+        super.init(nibName:"MUSEditorPreferencesViewController", bundle:nil)
     }
     
     override var identifier:String! {
