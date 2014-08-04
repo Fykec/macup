@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1F0D9D7C194AC7F7008E1856 /* MPPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0D9D73194AC7F7008E1856 /* MPPreferences.m */; };
 		1F0D9DAA194AC8CB008E1856 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 1F0D9DA6194AC8CB008E1856 /* Credits.rtf */; };
 		1F0D9DAB194AC8CB008E1856 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1F0D9DA8194AC8CB008E1856 /* InfoPlist.strings */; };
 		1F0D9DAD194AC8EF008E1856 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F0D9DAC194AC8EF008E1856 /* Images.xcassets */; };
@@ -76,8 +75,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1F0D9D72194AC7F7008E1856 /* MPPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPPreferences.h; sourceTree = "<group>"; };
-		1F0D9D73194AC7F7008E1856 /* MPPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPPreferences.m; sourceTree = "<group>"; };
 		1F0D9D82194AC83C008E1856 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Localization/Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		1F0D9D84194AC83C008E1856 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Localization/Base.lproj/MUSDocument.xib; sourceTree = "<group>"; };
 		1F0D9D86194AC83C008E1856 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Localization/Base.lproj/MUSEditorPreferencesViewController.xib; sourceTree = "<group>"; };
@@ -206,8 +203,6 @@
 				1F0D9D85194AC83C008E1856 /* MUSEditorPreferencesViewController.xib */,
 				2CA060C8197FA14800112168 /* MUSHtmlPreferencesViewController.swift */,
 				1F0D9D87194AC83C008E1856 /* MUSHtmlPreferencesViewController.xib */,
-				1F0D9D72194AC7F7008E1856 /* MPPreferences.h */,
-				1F0D9D73194AC7F7008E1856 /* MPPreferences.m */,
 				2C2AE0DD1980EA6C00069F25 /* MUSPreferences.swift */,
 			);
 			name = Preferences;
@@ -597,7 +592,6 @@
 				2C2AE0DE1980EA6C00069F25 /* MUSPreferences.swift in Sources */,
 				2CA060C9197FA14800112168 /* MUSHtmlPreferencesViewController.swift in Sources */,
 				2C1F58B019654CB400DD951C /* MUSRenderer.swift in Sources */,
-				1F0D9D7C194AC7F7008E1856 /* MPPreferences.m in Sources */,
 				1F0D9DAF194AC905008E1856 /* main.m in Sources */,
 				2CA060C7197F98BB00112168 /* MUSEditorPreferencesViewController.swift in Sources */,
 				2C9C5D5E196152350098CBAC /* MUSMainController.swift in Sources */,

@@ -20,9 +20,9 @@ func initPreferencesWindowController() -> MASPreferencesWindowController
 class MUSMainController : NSObject
 {
 
-    var prefereces:MPPreferences {
+    var prefereces:MUSPreferences {
     get {
-        return MPPreferences.sharedInstance()
+        return MUSPreferences.sharedInstance()
     }
     }
 
@@ -68,7 +68,7 @@ class MUSMainController : NSObject
         preferencesWindowController = MASPreferencesWindowController(viewControllers: vcs, title:title)
 
         let center:NSNotificationCenter = NSNotificationCenter.defaultCenter()
-        center.addObserver(self, selector: "showFirstLaunchTips", name: MPDidDetectFreshInstallationNotification, object: nil)
+        center.addObserver(self, selector: "showFirstLaunchTips", name: MUSDidDetectFreshInstallationNotification, object: nil)
         self.copyFiles()
 
 

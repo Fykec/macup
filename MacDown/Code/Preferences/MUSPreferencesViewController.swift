@@ -10,7 +10,7 @@ import Cocoa
 
 class MUSPreferencesViewController : NSViewController
 {
-    let preferences:MPPreferences = MPPreferences.sharedInstance()
+    let preferences:MUSPreferences = MUSPreferences.sharedInstance()
     
     init()
     {

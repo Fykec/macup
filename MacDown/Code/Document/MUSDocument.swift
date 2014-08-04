@@ -24,7 +24,7 @@ enum MUS_HOEDOWN_EXTENSIONS: CInt {
     HOEDOWN_EXT_QUOTE = 4036
 };
 
-extension MPPreferences {
+extension MUSPreferences {
 
     //Hoedown
     func extensionFlags() -> CInt
@@ -100,9 +100,9 @@ class TextViewDelegate: NSObject
 
     func textView(textView: NSTextView!, shouldChangeTextInRange affectedCharRange: NSRange, replacementString: String!) -> Bool
     {
-        if (MPPreferences.sharedInstance().editorCompleteMatchingCharacters)
+        if (MUSPreferences.sharedInstance().editorCompleteMatchingCharacters)
         {
-            let strikethrough:Bool = MPPreferences.sharedInstance().extensionStrikethough
+            let strikethrough:Bool = MUSPreferences.sharedInstance().extensionStrikethough
             if (textView.completeMatchingCharactersForTextInRange(affectedCharRange, withString: replacementString, strikethroughEnabled: strikethrough))
             {
                 return false;
@@ -115,7 +115,7 @@ class TextViewDelegate: NSObject
 
     func textViewShouldInsertTab(textView:NSTextView!) ->Bool
     {
-        if (MPPreferences.sharedInstance().editorConvertTabs)
+        if (MUSPreferences.sharedInstance().editorConvertTabs)
         {
             textView.insertSpacesForTab()
             return false
@@ -134,12 +134,12 @@ class TextViewDelegate: NSObject
 
     func textViewShouldDeleteBackward(textView:NSTextView!) ->Bool
     {
-        if (MPPreferences.sharedInstance().editorCompleteMatchingCharacters)
+        if (MUSPreferences.sharedInstance().editorCompleteMatchingCharacters)
         {
             let location = textView.selectedRange().location
             textView.deleteMatchingCharactersAround(location)
         }
-        if (MPPreferences.sharedInstance().editorConvertTabs)
+        if (MUSPreferences.sharedInstance().editorConvertTabs)
         {
             let location = textView.selectedRange().location
             textView.unindentForSpacesBefore(location)
@@ -316,7 +316,7 @@ class MUSTextView : NSTextView
 
 class MUSDocument : NSDocument, MUSRendererDataSource, MUSRendererDelegate, MUSPreviewDelegate
 {
-    let preferences:MPPreferences = MPPreferences.sharedInstance()
+    let preferences:MUSPreferences = MUSPreferences.sharedInstance()
 
     @IBOutlet weak var splitView:NSSplitView!
     var editor:MUSTextView!
@@ -459,11 +459,11 @@ class MUSDocument : NSDocument, MUSRendererDataSource, MUSRendererDelegate, MUSP
         {
             if (name!.hasSuffix(".md"))
             {
-                name = name!.substringToIndex(advance(name!.startIndex, -3))
+                name = name!.substringToIndex(advance(name!.startIndex, name!.lengthOfUTF8() - 3))
             }
             else if (name!.hasSuffix(".markdown"))
             {
-                name = name!.substringToIndex(advance(name!.startIndex, -9))
+                name = name!.substringToIndex(advance(name!.startIndex, name!.lengthOfUTF8() - 9))
             }
 
             if (name)
@@ -514,8 +514,11 @@ class MUSDocument : NSDocument, MUSRendererDataSource, MUSRendererDelegate, MUSP
         {
             baseURL = self.preferences.htmlDefaultDirectoryUrl
         }
-        self.preview.isLoadingPreview = true
-        self.preview.mainFrame.loadHTMLString(html, baseURL: baseURL)
+        if (self.preview)
+        {
+            self.preview.isLoadingPreview = true
+            self.preview.mainFrame.loadHTMLString(html, baseURL: baseURL)
+        }
     }
 
 
@@ -760,7 +763,7 @@ class MUSDocument : NSDocument, MUSRendererDataSource, MUSRendererDelegate, MUSP
     {
         self.highlighter.deactivate()
 
-        self.editor.font = self.preferences.editorBaseFont.copy() as NSFont
+        self.editor.font = self.preferences.editorBaseFont!.copy() as NSFont
 
         var extensions = pmh_EXT_NOTES
         if (self.preferences.extensionFootnotes)
@@ -784,7 +787,7 @@ class MUSDocument : NSDocument, MUSRendererDataSource, MUSRendererDelegate, MUSP
 
         self.highlighter.readClearTextStylesFromTextView()
 
-        let themeName = self.preferences.editorStyleName as NSString
+        let themeName = self.preferences.editorStyleName! as NSString
 
         if (themeName.length > 0)
         {

@@ -117,7 +117,7 @@ class MUSHtmlPreferencesViewController : MUSPreferencesViewController, MASPrefer
         stylesheetSelect.addItemWithTitle("")
         stylesheetSelect.addItemsWithTitles(itemTitles)
 
-        let title = self.preferences.htmlStyleName.copy() as? String
+        let title = self.preferences.htmlStyleName!.copy() as? String
         if (title)
         {
             stylesheetSelect.selectItemWithTitle(title)

@@ -51,7 +51,7 @@ class MUSEditorPreferencesViewController : MUSPreferencesViewController, MASPref
 
     override func viewWillAppear()
     {
-        refreshPreviewForFont(self.preferences.editorBaseFont.copy() as NSFont)
+        refreshPreviewForFont(self.preferences.editorBaseFont!.copy() as NSFont)
         loadThemes()
     }
 
@@ -72,7 +72,7 @@ class MUSEditorPreferencesViewController : MUSPreferencesViewController, MASPref
         themeSelect.addItemWithTitle("")
         themeSelect.addItemsWithTitles(itemTitles)
 
-        let title = self.preferences.editorStyleName.copy() as? String
+        let title = self.preferences.editorStyleName!.copy() as? String
         if (title)
         {
             themeSelect.selectItemWithTitle(title)
