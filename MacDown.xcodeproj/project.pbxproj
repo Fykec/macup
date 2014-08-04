@@ -18,7 +18,6 @@
 		1F0D9DB4194AC9EE008E1856 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F0D9D81194AC83C008E1856 /* MainMenu.xib */; };
 		1F3A47521953E84700293259 /* help.md in Resources */ = {isa = PBXBuildFile; fileRef = 1F3A47511953E84700293259 /* help.md */; };
 		1F4C8E9A194AE0B9004BF82E /* MarkdownDocument.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1F4C8E99194AE0B9004BF82E /* MarkdownDocument.icns */; };
-		1F51C9A5194565050015A96F /* MPPreferencesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCDCA311944F96E00B1F966 /* MPPreferencesTests.m */; };
 		1F8A82D919533E9300B6BF69 /* Prism in Resources */ = {isa = PBXBuildFile; fileRef = 1F8A82D819533E9300B6BF69 /* Prism */; };
 		1F8A835D1953454F00B6BF69 /* HGMarkdownHighlighter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A83581953454F00B6BF69 /* HGMarkdownHighlighter.m */; settings = {COMPILER_FLAGS = "-Xanalyzer -analyzer-disable-checker"; }; };
 		1F8A835E1953454F00B6BF69 /* HGMarkdownHighlightingStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A835A1953454F00B6BF69 /* HGMarkdownHighlightingStyle.m */; };
@@ -29,14 +28,10 @@
 		1F9A14F6194EFF1F00D1C6A9 /* PreferencesMarkdown.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F9A14F5194EFF1F00D1C6A9 /* PreferencesMarkdown.png */; };
 		1FA6CDB91952D2CD008D5CA0 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 1FA6CDB81952D2CD008D5CA0 /* dsa_pub.pem */; };
 		1FA6DE251941CC9E000409FB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FA6DE241941CC9E000409FB /* Cocoa.framework */; };
-		1FA6DE481941CC9E000409FB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FA6DE241941CC9E000409FB /* Cocoa.framework */; };
 		1FBBD4BE194C952300BB3C88 /* MPExportPanelAccessoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FBBD4BC194C952300BB3C88 /* MPExportPanelAccessoryViewController.xib */; };
 		1FBBD4CB194CA36500BB3C88 /* hoedown_html_patch.c in Sources */ = {isa = PBXBuildFile; fileRef = 1FBBD4CA194CA36500BB3C88 /* hoedown_html_patch.c */; };
-		1FC29F5C1944FC2600D616C7 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FC29F5B1944FC2600D616C7 /* XCTest.framework */; };
-		1FC29F5E1944FC4F00D616C7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1FCDCA321944F96E00B1F966 /* InfoPlist.strings */; };
 		1FD7F8DE194A0211007ED2A1 /* Data in Resources */ = {isa = PBXBuildFile; fileRef = 1FD7F8DD194A0211007ED2A1 /* Data */; };
 		1FF207631941CF22005B5654 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FF207621941CF22005B5654 /* WebKit.framework */; };
-		1FFF301D1948A5320009AF24 /* MPStringLookupTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FFF301C1948A5320009AF24 /* MPStringLookupTests.m */; };
 		2C0CD0D81965447E00111223 /* MUSPreviewWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0CD0D71965447E00111223 /* MUSPreviewWebView.m */; };
 		2C1E2B43196BFBA7000A547D /* Character+unichar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1E2B42196BFBA7000A547D /* Character+unichar.swift */; };
 		2C1F58B019654CB400DD951C /* MUSRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1F58AF19654CB400DD951C /* MUSRenderer.swift */; };
@@ -53,18 +48,10 @@
 		2CA060C7197F98BB00112168 /* MUSEditorPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA060C6197F98BB00112168 /* MUSEditorPreferencesViewController.swift */; };
 		2CA060C9197FA14800112168 /* MUSHtmlPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA060C8197FA14800112168 /* MUSHtmlPreferencesViewController.swift */; };
 		2CBBCB561966D1D000907DDA /* MUSHoedownHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBBCB551966D1D000907DDA /* MUSHoedownHelper.m */; };
-		5318159056384894AA42DB4F /* libPods-MacDownTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AEAF42BBDCEC4012B5092BB3 /* libPods-MacDownTests.a */; };
 		B49728377A904875B2963C38 /* libPods-MacDown.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C5C1FBBB3ED456285901D31 /* libPods-MacDown.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1FA6DE491941CC9E000409FB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1FA6DE191941CC9E000409FB /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1FA6DE201941CC9E000409FB;
-			remoteInfo = MarkPad;
-		};
 		1FE2197719534A5D00DB931F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1F8A837E195348C500B6BF69 /* peg-markdown-highlight.xcodeproj */;
@@ -109,7 +96,6 @@
 		1FA6DE271941CC9E000409FB /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		1FA6DE281941CC9E000409FB /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		1FA6DE291941CC9E000409FB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		1FA6DE451941CC9E000409FB /* MacDownTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MacDownTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FBBD4BD194C952300BB3C88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = MacDown/Localization/Base.lproj/MPExportPanelAccessoryViewController.xib; sourceTree = SOURCE_ROOT; };
 		1FBBD4C9194CA35900BB3C88 /* hoedown_html_patch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hoedown_html_patch.h; sourceTree = "<group>"; };
 		1FBBD4CA194CA36500BB3C88 /* hoedown_html_patch.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = hoedown_html_patch.c; sourceTree = "<group>"; };
@@ -153,16 +139,6 @@
 				1FF207631941CF22005B5654 /* WebKit.framework in Frameworks */,
 				1FA6DE251941CC9E000409FB /* Cocoa.framework in Frameworks */,
 				B49728377A904875B2963C38 /* libPods-MacDown.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1FA6DE421941CC9E000409FB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1FA6DE481941CC9E000409FB /* Cocoa.framework in Frameworks */,
-				1FC29F5C1944FC2600D616C7 /* XCTest.framework in Frameworks */,
-				5318159056384894AA42DB4F /* libPods-MacDownTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,7 +286,6 @@
 			isa = PBXGroup;
 			children = (
 				1FA6DE211941CC9E000409FB /* MacDown.app */,
-				1FA6DE451941CC9E000409FB /* MacDownTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -386,9 +361,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1FA6DE201941CC9E000409FB /* MacDown */ = {
+		1FA6DE201941CC9E000409FB /* MacUp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1FA6DE551941CC9E000409FB /* Build configuration list for PBXNativeTarget "MacDown" */;
+			buildConfigurationList = 1FA6DE551941CC9E000409FB /* Build configuration list for PBXNativeTarget "MacUp" */;
 			buildPhases = (
 				A4C68C7905CF45C89A0CC47D /* Check Pods Manifest.lock */,
 				1FA6DE1D1941CC9E000409FB /* Sources */,
@@ -402,30 +377,10 @@
 			dependencies = (
 				1FE2197819534A5D00DB931F /* PBXTargetDependency */,
 			);
-			name = MacDown;
+			name = MacUp;
 			productName = MarkPad;
 			productReference = 1FA6DE211941CC9E000409FB /* MacDown.app */;
 			productType = "com.apple.product-type.application";
-		};
-		1FA6DE441941CC9E000409FB /* MacDownTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1FA6DE581941CC9E000409FB /* Build configuration list for PBXNativeTarget "MacDownTests" */;
-			buildPhases = (
-				694A3D57598E431C90D512B9 /* Check Pods Manifest.lock */,
-				1FA6DE411941CC9E000409FB /* Sources */,
-				1FA6DE421941CC9E000409FB /* Frameworks */,
-				1FA6DE431941CC9E000409FB /* Resources */,
-				72CBA169CC684D3CB9F83627 /* Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				1FA6DE4A1941CC9E000409FB /* PBXTargetDependency */,
-			);
-			name = MacDownTests;
-			productName = MarkPadTests;
-			productReference = 1FA6DE451941CC9E000409FB /* MacDownTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -436,11 +391,6 @@
 				CLASSPREFIX = MUS;
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "MacUp, MarkDown, Swift";
-				TargetAttributes = {
-					1FA6DE441941CC9E000409FB = {
-						TestTargetID = 1FA6DE201941CC9E000409FB;
-					};
-				};
 			};
 			buildConfigurationList = 1FA6DE1C1941CC9E000409FB /* Build configuration list for PBXProject "MacDown" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -461,8 +411,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				1FA6DE201941CC9E000409FB /* MacDown */,
-				1FA6DE441941CC9E000409FB /* MacDownTests */,
+				1FA6DE201941CC9E000409FB /* MacUp */,
 			);
 		};
 /* End PBXProject section */
@@ -489,14 +438,6 @@
 				1F9A14F6194EFF1F00D1C6A9 /* PreferencesMarkdown.png in Resources */,
 				1F4C8E9A194AE0B9004BF82E /* MarkdownDocument.icns in Resources */,
 				1F0D9DAB194AC8CB008E1856 /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1FA6DE431941CC9E000409FB /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1FC29F5E1944FC4F00D616C7 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -530,36 +471,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Pods-MacDown-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		694A3D57598E431C90D512B9 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		72CBA169CC684D3CB9F83627 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-MacDownTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A4C68C7905CF45C89A0CC47D /* Check Pods Manifest.lock */ = {
@@ -609,23 +520,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1FA6DE411941CC9E000409FB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1F51C9A5194565050015A96F /* MPPreferencesTests.m in Sources */,
-				1FFF301D1948A5320009AF24 /* MPStringLookupTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1FA6DE4A1941CC9E000409FB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1FA6DE201941CC9E000409FB /* MacDown */;
-			targetProxy = 1FA6DE491941CC9E000409FB /* PBXContainerItemProxy */;
-		};
 		1FE2197819534A5D00DB931F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "peg-markdown-highlight";
@@ -819,56 +716,6 @@
 			};
 			name = Release;
 		};
-		1FA6DE591941CC9E000409FB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = AB3B8954FAB54E3C803DDAEE /* Pods-MacDownTests.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MacDown.app/Contents/MacOS/MacDown";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "MacDown/Code/MacDown-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "MacDownTests/MacDownTests-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/MacDown-ggdtxvuybojeqbhjydkhilziizrv/Build/Products/Debug",
-				);
-				PRODUCT_NAME = MacDownTests;
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		1FA6DE5A1941CC9E000409FB /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = AB3B8954FAB54E3C803DDAEE /* Pods-MacDownTests.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MacDown.app/Contents/MacOS/MacDown";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "MacDown/Code/MacDown-Prefix.pch";
-				INFOPLIST_FILE = "MacDownTests/MacDownTests-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/MacDown-ggdtxvuybojeqbhjydkhilziizrv/Build/Products/Debug",
-				);
-				PRODUCT_NAME = MacDownTests;
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -881,20 +728,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1FA6DE551941CC9E000409FB /* Build configuration list for PBXNativeTarget "MacDown" */ = {
+		1FA6DE551941CC9E000409FB /* Build configuration list for PBXNativeTarget "MacUp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1FA6DE561941CC9E000409FB /* Debug */,
 				1FA6DE571941CC9E000409FB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		1FA6DE581941CC9E000409FB /* Build configuration list for PBXNativeTarget "MacDownTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1FA6DE591941CC9E000409FB /* Debug */,
-				1FA6DE5A1941CC9E000409FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
